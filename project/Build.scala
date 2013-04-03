@@ -13,7 +13,8 @@ object ApplicationBuild extends Build {
     javaJdbc,
     javaEbean,
     "com.google.inject" % "guice" % "3.0",
-    "com.google.inject.extensions" % "guice-multibindings" % "3.0"
+    "com.google.inject.extensions" % "guice-multibindings" % "3.0",
+    "util" % "util_2.10" % "1.0-SNAPSHOT"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
