@@ -1,13 +1,13 @@
-package app;
+package de.htwg.seapal.boat.app;
 
 import java.util.Scanner;
 
-import views.tui.BoatTUI;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import controllers.IBoatController;
+import de.htwg.seapal.boat.controllers.IBoatController;
+import de.htwg.seapal.boat.views.tui.BoatTUI;
 
 public class App {
 

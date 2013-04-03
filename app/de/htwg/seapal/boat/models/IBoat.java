@@ -1,4 +1,4 @@
-package models;
+package de.htwg.seapal.boat.models;
 
 public interface IBoat {
 

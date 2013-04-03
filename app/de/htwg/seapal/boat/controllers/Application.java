@@ -1,4 +1,4 @@
-package controllers;
+package de.htwg.seapal.boat.controllers;
 
 import play.*;
 import play.mvc.*;

@@ -1,178 +1,129 @@
-package models.impl;
+package de.htwg.seapal.boat.models.mock;
 
-import models.IBoat;
+import de.htwg.seapal.boat.models.IBoat;
 
 public class Boat implements IBoat {
 	
-	private String bootsname;
-	private String registerNr;
-	private String segelzeichen;
-	private String heimathafen;
-	private String yachtclub;
-	private String eigner;
-	private String versicherung;
-	private String rufzeichen;
-	private String typ;
-	private String konstrukteur;
-	private double laenge;
-	private double breite;
-	private double tiefgang;
-	private double masthoehe;
-	private double verdraengung;
-	private String riggArt;
-	private int baujahr;
-	private String motor;
-	private double tankGroesse;
-	private double wassertankGroesse;
-	private double abwassertankGroesse;
-	private double grosssegelGroesse;
-	private double genuaGroesse;
-	private double spiGroesse;
-	
-
 	public String getBootsname() {
-		return bootsname;
+		return "Black Pearl";
 	}
 	public void setBootsname(String bootsname) {
-		this.bootsname = bootsname;
 	}
+	
 	public String getRegisterNr() {
-		return registerNr;
+		return "ABC12345";
 	}
 	public void setRegisterNr(String registerNr) {
-		this.registerNr = registerNr;
 	}
+	
 	public String getSegelzeichen() {
-		return segelzeichen;
+		return "KN1520";
 	}
 	public void setSegelzeichen(String segelzeichen) {
-		this.segelzeichen = segelzeichen;
 	}
 	public String getHeimathafen() {
-		return heimathafen;
+		return "Konstanz";
 	}
 	public void setHeimathafen(String heimathafen) {
-		this.heimathafen = heimathafen;
 	}
 	public String getYachtclub() {
-		return yachtclub;
+		return "YachtiKonstanz";
 	}
 	public void setYachtclub(String yachtclub) {
-		this.yachtclub = yachtclub;
 	}
 	public String getEigner() {
-		return eigner;
+		return "Jack Sparrow";
 	}
 	public void setEigner(String eigner) {
-		this.eigner = eigner;
 	}
 	public String getVersicherung() {
-		return versicherung;
+		return "HukPiraten";
 	}
 	public void setVersicherung(String versicherung) {
-		this.versicherung = versicherung;
 	}
 	public String getRufzeichen() {
-		return rufzeichen;
+		return "Schwarze Segel";
 	}
 	public void setRufzeichen(String rufzeichen) {
-		this.rufzeichen = rufzeichen;
 	}
 	public String getTyp() {
-		return typ;
+		return "Segelboot";
 	}
 	public void setTyp(String typ) {
-		this.typ = typ;
 	}
 	public String getKonstrukteur() {
-		return konstrukteur;
+		return "Davy Jones";
 	}
 	public void setKonstrukteur(String konstrukteur) {
-		this.konstrukteur = konstrukteur;
 	}
 	public double getLaenge() {
-		return laenge;
+		return 40;
 	}
 	public void setLaenge(double laenge) {
-		this.laenge = laenge;
 	}
 	public double getBreite() {
-		return breite;
+		return 15;
 	}
 	public void setBreite(double breite) {
-		this.breite = breite;
 	}
 	public double getTiefgang() {
-		return tiefgang;
+		return 3;
 	}
 	public void setTiefgang(double tiefgang) {
-		this.tiefgang = tiefgang;
 	}
 	public double getMasthoehe() {
-		return masthoehe;
+		return 25;
 	}
 	public void setMasthoehe(double masthoehe) {
-		this.masthoehe = masthoehe;
 	}
 	public double getVerdraengung() {
-		return verdraengung;
+		return 250;
 	}
 	public void setVerdraengung(double verdraengung) {
-		this.verdraengung = verdraengung;
 	}
 	public String getRiggArt() {
-		return riggArt;
+		return "riggArt";
 	}
 	public void setRiggArt(String riggArt) {
-		this.riggArt = riggArt;
 	}
 	public int getBaujahr() {
-		return baujahr;
+		return 1250;
 	}
 	public void setBaujahr(int baujahr) {
-		this.baujahr = baujahr;
 	}
 	public String getMotor() {
-		return motor;
+		return "Daimler";
 	}
 	public void setMotor(String motor) {
-		this.motor = motor;
 	}
 	public double getTankGroesse() {
-		return tankGroesse;
+		return 220;
 	}
 	public void setTankGroesse(double tankGroesse) {
-		this.tankGroesse = tankGroesse;
 	}
 	public double getWassertankGroesse() {
-		return wassertankGroesse;
+		return 400;
 	}
 	public void setWassertankGroesse(double wassertankGroesse) {
-		this.wassertankGroesse = wassertankGroesse;
 	}
 	public double getAbwassertankGroesse() {
-		return abwassertankGroesse;
+		return 60;
 	}
 	public void setAbwassertankGroesse(double abwassertankGroesse) {
-		this.abwassertankGroesse = abwassertankGroesse;
 	}
 	public double getGrosssegelGroesse() {
-		return grosssegelGroesse;
+		return 30;
 	}
 	public void setGrosssegelGroesse(double grosssegelGroesse) {
-		this.grosssegelGroesse = grosssegelGroesse;
 	}
 	public double getGenuaGroesse() {
-		return genuaGroesse;
+		return 25;
 	}
 	public void setGenuaGroesse(double genuaGroesse) {
-		this.genuaGroesse = genuaGroesse;
 	}
 	public double getSpiGroesse() {
-		return spiGroesse;
+		return 32.5;
 	}
 	public void setSpiGroesse(double spiGroesse) {
-		this.spiGroesse = spiGroesse;
 	}
-
 }

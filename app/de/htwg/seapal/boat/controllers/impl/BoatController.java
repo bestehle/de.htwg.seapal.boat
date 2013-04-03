@@ -1,11 +1,11 @@
-package controllers.impl;
+package de.htwg.seapal.boat.controllers.impl;
 
-import models.IBoat;
 
 import com.google.inject.Inject;
 
-import util.observer.Observable;
-import controllers.IBoatController;
+import de.htwg.seapal.boat.controllers.IBoatController;
+import de.htwg.seapal.boat.models.IBoat;
+import de.htwg.seapal.boat.util.observer.Observable;
 
 public class BoatController extends Observable implements IBoatController {
 

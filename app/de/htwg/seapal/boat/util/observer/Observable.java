@@ -1,4 +1,4 @@
-package util.observer;
+package de.htwg.seapal.boat.util.observer;
 
 import java.util.ArrayList;
 import java.util.Iterator;

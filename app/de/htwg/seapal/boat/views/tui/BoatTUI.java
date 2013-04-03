@@ -1,10 +1,10 @@
-package views.tui;
+package de.htwg.seapal.boat.views.tui;
 
 import java.util.Scanner;
 
-import controllers.IBoatController;
-import util.observer.Event;
-import util.observer.IObserver;
+import de.htwg.seapal.boat.controllers.IBoatController;
+import de.htwg.seapal.boat.util.observer.Event;
+import de.htwg.seapal.boat.util.observer.IObserver;
 
 public class BoatTUI implements IObserver {
 
