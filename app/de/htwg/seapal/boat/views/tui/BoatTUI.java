@@ -2,6 +2,8 @@ package de.htwg.seapal.boat.views.tui;
 
 import java.util.Scanner;
 
+import com.google.inject.Inject;
+
 import de.htwg.seapal.boat.controllers.IBoatController;
 import de.htwg.seapal.boat.util.observer.Event;
 import de.htwg.seapal.boat.util.observer.IObserver;
@@ -11,6 +13,7 @@ public class BoatTUI implements IObserver, Plugin {
 
 	private IBoatController controller;
 
+	@Inject
 	public BoatTUI(IBoatController controller) {
 		this.controller = controller;
 		controller.addObserver(this);
