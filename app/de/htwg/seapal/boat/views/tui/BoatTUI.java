@@ -1,5 +1,7 @@
 package de.htwg.seapal.boat.views.tui;
 
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 import com.google.inject.Inject;
@@ -12,6 +14,7 @@ import de.htwg.util.plugin.Plugin;
 public class BoatTUI implements IObserver, Plugin {
 
 	private IBoatController controller;
+	private Scanner scanner = new Scanner(System.in);
 
 	@Inject
 	public BoatTUI(IBoatController controller) {
@@ -24,21 +27,47 @@ public class BoatTUI implements IObserver, Plugin {
 	}
 
 	public boolean processInputLine(String line) {
-		boolean continu = true;
-		if (line.equalsIgnoreCase("q")) {
-			continu = false;
+		while (true) {
+			switch (line.toLowerCase().charAt(0)) {
+			case 'l':
+				System.out.println(listBoats());
+				break;
+			case 's':
+				System.out.print("\t ID: \t BOAT-");
+				System.out.println(showBoat(scanner.next()));
+				break;
+			case 'q':
+				return false;				
+			default:
+				break;
+			}
+			line = scanner.next();
 		}
-		if (line.equalsIgnoreCase("n")) {
-			Scanner scanner = new Scanner(System.in);
-			controller.setBootsname(scanner.next());
-		}
-		return continu;
 	}
-	
+
+	private String listBoats() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("\t ID \t\t Bootsname\n");
+		sb.append("\t ----------- \t -----------\n");
+		Map<String, String> boats = controller.getBoats();
+		for (Entry<String, String> entry : boats.entrySet()) {
+			sb.append("\t " + entry.getKey() + "\t " + entry.getValue() + "\n");
+		}
+		return sb.toString();
+	}
+
+	private String showBoat(String id) {
+		return "\t " + controller.getString();
+	}
+
 	public void printTUI() {
-		System.out.println("BoatDemo: n - new Name");
-		System.out.println(controller.getString());
-		
+		System.out.println("BoatDemo: ");
+		System.out.println("\t l - List Boats");
+		System.out.println("\t s - Show Boat");
+		System.out.println("\t n - New Boat");
+		System.out.println("\t e - Edit Boat");
+		System.out.println("\t d - Delete Boat");
+		System.out.println("\t q - Quit to MainMenu");
 	}
 
 	@Override

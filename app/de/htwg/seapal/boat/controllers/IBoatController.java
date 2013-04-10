@@ -60,4 +60,7 @@ public interface IBoatController extends IObservable {
 	
 	public Map<String, String> getBoats();
 	public String getBootsnameById(String id);
+	
+	public Map<String, String> getPersons();
+	public String getPersonnameById(String id);
 }
