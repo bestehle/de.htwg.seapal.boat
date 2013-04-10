@@ -4,8 +4,6 @@ package de.htwg.seapal.boat.controllers.mock;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.collections.map.HashedMap;
-
 import com.google.inject.Inject;
 
 import de.htwg.seapal.boat.controllers.IBoatController;
