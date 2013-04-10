@@ -1,6 +1,11 @@
 package de.htwg.seapal.boat.controllers.mock;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.commons.collections.map.HashedMap;
+
 import com.google.inject.Inject;
 
 import de.htwg.seapal.boat.controllers.IBoatController;
@@ -306,5 +311,28 @@ public class BoatController extends Observable implements IBoatController {
 				+ ", GrosssegelGroesse() = " + getGrosssegelGroesse()
 				+ ", GenuaGroesse() = " + getGenuaGroesse()
 				+ ", SpiGroesse() = " + getSpiGroesse();
+	}
+
+	@Override
+	public String getId() {
+		return boat.getId();
+	}
+
+	@Override
+	public void setId(String id) {
+		boat.setId(id);
+		notifyObservers();
+	}
+
+	@Override
+	public Map<String, String> getBoats() {
+		Map<String, String> list = new HashMap<String, String>();
+		list.put(boat.getId(), boat.getBootsname());
+		return list;
+	}
+
+	@Override
+	public String getBootsnameById(String id) {
+		return boat.getBootsname();
 	}
 }

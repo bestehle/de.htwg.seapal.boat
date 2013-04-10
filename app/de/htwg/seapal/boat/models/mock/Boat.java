@@ -4,6 +4,15 @@ import de.htwg.seapal.boat.models.IBoat;
 
 public class Boat implements IBoat {
 	
+	
+	@Override
+	public String getId() {
+		return "BOAT-1234";
+	}
+	@Override
+	public void setId(String id) {
+	}
+	
 	public String getBootsname() {
 		return "Black Pearl";
 	}
@@ -126,4 +135,5 @@ public class Boat implements IBoat {
 	}
 	public void setSpiGroesse(double spiGroesse) {
 	}
+	
 }

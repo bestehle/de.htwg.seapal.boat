@@ -1,6 +1,8 @@
 package de.htwg.seapal.boat.controllers.impl;
 
 
+import java.util.Map;
+
 import com.google.inject.Inject;
 
 import de.htwg.seapal.boat.controllers.IBoatController;
@@ -306,5 +308,29 @@ public class BoatController extends Observable implements IBoatController {
 				+ ", GrosssegelGroesse() = " + getGrosssegelGroesse()
 				+ ", GenuaGroesse() = " + getGenuaGroesse()
 				+ ", SpiGroesse() = " + getSpiGroesse();
+	}
+
+	@Override
+	public String getId() {
+		return boat.getId();
+	}
+
+	@Override
+	public void setId(String id) {
+		boat.setId(id);
+		notifyObservers();
+		
+	}
+
+	@Override
+	public Map<String, String> getBoats() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getBootsnameById(String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

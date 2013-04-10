@@ -4,6 +4,7 @@ import de.htwg.seapal.boat.models.IBoat;
 
 public class Boat implements IBoat {
 	
+	private String id;
 	private String bootsname;
 	private String registerNr;
 	private String segelzeichen;
@@ -29,6 +30,12 @@ public class Boat implements IBoat {
 	private double genuaGroesse;
 	private double spiGroesse;
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getBootsname() {
 		return bootsname;
