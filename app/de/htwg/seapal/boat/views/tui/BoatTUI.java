@@ -36,6 +36,9 @@ public class BoatTUI implements IObserver, Plugin {
 				System.out.print("\t ID: \t BOAT-");
 				System.out.println(showBoat(scanner.next()));
 				break;
+			case 'n':
+				newBoat();
+				break;
 			case 'q':
 				return false;				
 			default:
@@ -43,6 +46,12 @@ public class BoatTUI implements IObserver, Plugin {
 			}
 			line = scanner.next();
 		}
+	}
+
+	private void newBoat() {
+		System.out.print("\t Bootsname:\t");
+		String bootsname = scanner.next();
+		// TODO
 	}
 
 	private String listBoats() {
@@ -57,7 +66,7 @@ public class BoatTUI implements IObserver, Plugin {
 	}
 
 	private String showBoat(String id) {
-		return "\t " + controller.getString();
+		return "\t " + controller.getString(id);
 	}
 
 	public void printTUI() {

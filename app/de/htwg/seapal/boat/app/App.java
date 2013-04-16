@@ -17,7 +17,7 @@ public class App {
 	public static void main(String[] args) {
 
 		// Set up Google Guice Dependency Injector
-		Injector injector = Guice.createInjector(new AppMockModule());
+		Injector injector = Guice.createInjector(new AppImplModule());
 
 		// Build up the application, resolving dependencies automatically by
 		// Guice
