@@ -30,6 +30,11 @@ public class Boat implements IBoat {
 	private double genuaGroesse;
 	private double spiGroesse;
 	
+	
+	public IBoat getInstance()	{
+		return new Boat();
+	}
+	
 	public String getId() {
 		return id;
 	}

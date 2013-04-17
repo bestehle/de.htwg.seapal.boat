@@ -27,31 +27,37 @@ public class BoatTUI implements IObserver, Plugin {
 	}
 
 	public boolean processInputLine(String line) {
-		while (true) {
-			switch (line.toLowerCase().charAt(0)) {
-			case 'l':
-				System.out.println(listBoats());
-				break;
-			case 's':
-				System.out.print("\t ID: \t BOAT-");
-				System.out.println(showBoat(scanner.next()));
-				break;
-			case 'n':
-				newBoat();
-				break;
-			case 'q':
-				return false;				
-			default:
-				break;
+		try {
+			while (true) {
+				switch (line.toLowerCase().charAt(0)) {
+				case 'l':
+					System.out.println(listBoats());
+					break;
+				case 's':
+					System.out.print("\t ID: \t BOAT-");
+					System.out.println(showBoat("BOAT-" + scanner.next()));
+					break;
+				case 'n':
+					newBoat();
+					break;
+				case 'q':
+					return false;
+				default:
+					break;
+				}
+				line = scanner.next();
 			}
-			line = scanner.next();
+		} finally {
+			controller.closeDB();
+			scanner.close();
 		}
 	}
 
 	private void newBoat() {
 		System.out.print("\t Bootsname:\t");
 		String bootsname = scanner.next();
-		// TODO
+		String id = controller.newBoat();
+		controller.setBootsname(id, bootsname);
 	}
 
 	private String listBoats() {

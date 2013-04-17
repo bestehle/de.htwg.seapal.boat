@@ -2,6 +2,8 @@ package de.htwg.seapal.boat.models;
 
 public interface IBoat {
 	
+	public IBoat getInstance();
+	
 	public String getId();
 	public void setId(String id);
 	public String getBootsname();

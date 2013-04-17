@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
 import com.db4o.query.Predicate;
 import com.google.inject.Inject;
 
@@ -18,12 +19,14 @@ public class BoatController extends Observable implements IBoatController {
 
 	protected IPersonController personContoller;
 	private ObjectContainer db;
+	private IBoat boat;
 
 	@Inject
 	public BoatController(IBoat boat, IPersonController personController) {
 		this.personContoller = personController;
 		db = Db4oEmbedded
-				.openFile(Db4oEmbedded.newConfiguration(), "boat.data");
+				.openFile(Db4oEmbedded.newConfiguration(), "boat.db");
+		this.boat = boat;
 	}
 
 	@Override
@@ -400,6 +403,45 @@ public class BoatController extends Observable implements IBoatController {
 
 	@Override
 	public String newBoat() {
-		return null;
+		IBoat newBoat = boat.getInstance();
+		String id = getNewId();
+		newBoat.setId(id);
+		db.store(newBoat);
+		return id;
+	}
+
+	public void closeDB() {
+		db.close();
+	}
+
+	private String getNewId() {
+		IdContainer currentId;
+		List<IdContainer> query = db.query(IdContainer.class);
+		if (query.isEmpty()) {
+			currentId = new IdContainer(0);
+			db.store(currentId);
+		} else {
+			currentId = query.get(0);
+			currentId.setId(currentId.getId() + 1);
+			db.store(currentId);
+		}
+		return "BOAT-" + currentId.getId();
+	}
+
+	private static class IdContainer {
+		private int id;
+
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public IdContainer(int id) {
+			this.id = id;
+		}
+
 	}
 }
