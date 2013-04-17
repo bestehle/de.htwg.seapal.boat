@@ -3,6 +3,7 @@ package de.htwg.seapal.boat.controllers.impl;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
@@ -15,17 +16,17 @@ import de.htwg.seapal.boat.models.IBoat;
 import de.htwg.seapal.boat.util.observer.Observable;
 import de.htwg.seapal.person.controllers.IPersonController;
 
-public class BoatController extends Observable implements IBoatController {
+public class BoatControllerDB4O extends Observable implements IBoatController {
 
 	protected IPersonController personContoller;
 	private ObjectContainer db;
 	private IBoat boat;
 
 	@Inject
-	public BoatController(IBoat boat, IPersonController personController) {
+	public BoatControllerDB4O(IBoat boat, IPersonController personController) {
 		this.personContoller = personController;
 		db = Db4oEmbedded
-				.openFile(Db4oEmbedded.newConfiguration(), "boat.db");
+				.openFile(Db4oEmbedded.newConfiguration(), "boat3.db");
 		this.boat = boat;
 	}
 
@@ -54,9 +55,11 @@ public class BoatController extends Observable implements IBoatController {
 		List<IBoat> query = db.query(new Predicate<IBoat>() {
 			@Override
 			public boolean match(IBoat boat) {
-				return boat.getId() == id;
+				return boat.getId().equals(id);
 			}
 		});
+		if (query.isEmpty())
+			throw new NoSuchElementException("No Boat for id : " + id);
 		IBoat boat = query.get(0);
 		return boat;
 	}
@@ -443,5 +446,11 @@ public class BoatController extends Observable implements IBoatController {
 			this.id = id;
 		}
 
+	}
+
+	@Override
+	public void deleteBoat(String id) {
+		db.delete(getBoat(id));
+		notifyObservers();
 	}
 }

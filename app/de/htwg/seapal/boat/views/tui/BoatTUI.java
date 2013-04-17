@@ -2,6 +2,7 @@ package de.htwg.seapal.boat.views.tui;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import com.google.inject.Inject;
@@ -40,6 +41,12 @@ public class BoatTUI implements IObserver, Plugin {
 				case 'n':
 					newBoat();
 					break;
+				case 'e':
+					editBoat();
+					break;
+				case 'd':
+					deleteBoat();
+					break;
 				case 'q':
 					return false;
 				default:
@@ -51,6 +58,35 @@ public class BoatTUI implements IObserver, Plugin {
 			controller.closeDB();
 			scanner.close();
 		}
+	}
+
+	private void editBoat() {
+		System.out.print("\t ID: \t BOAT-");
+		String id = "BOAT-" + scanner.next();
+		String bootsname = "";
+		try {
+			bootsname = controller.getBootsname(id);
+		} catch (NoSuchElementException e) {
+			System.out.println("\t " + e.getMessage());
+			return;
+		}
+		System.out.print("\t " + bootsname + ": set Bootsname to : ");
+		bootsname = scanner.next();
+		controller.setBootsname(id, bootsname);		
+	}
+	
+	private void deleteBoat() {
+		System.out.print("\t ID: \t BOAT-");
+		String id = "BOAT-" + scanner.next();
+		String bootsname = "";
+		try {
+			bootsname = controller.getBootsname(id);
+		} catch (NoSuchElementException e) {
+			System.out.println("\t " + e.getMessage());
+			return;
+		}
+		controller.deleteBoat(id);
+		System.out.println("\t Deleted Boat:" + bootsname);
 	}
 
 	private void newBoat() {
@@ -72,7 +108,12 @@ public class BoatTUI implements IObserver, Plugin {
 	}
 
 	private String showBoat(String id) {
-		return "\t " + controller.getString(id);
+		try {
+			return "\t " + controller.getString(id);
+		} catch (NoSuchElementException e) {
+			return e.getMessage();
+		}
+
 	}
 
 	public void printTUI() {

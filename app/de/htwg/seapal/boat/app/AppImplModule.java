@@ -13,7 +13,7 @@ public class AppImplModule extends AbstractModule {
 	@Override
 	protected void configure() {
 		bind(IBoat.class).to(de.htwg.seapal.boat.models.impl.Boat.class);
-		bind(IBoatController.class).to(de.htwg.seapal.boat.controllers.impl.BoatController.class);	
+		bind(IBoatController.class).to(de.htwg.seapal.boat.controllers.impl.BoatControllerDB4O.class);	
 		bind(IPersonController.class).to(de.htwg.seapal.person.controllers.mock.PersonController.class);
 		bind(IPerson.class).to(de.htwg.seapal.person.models.mock.Person.class);
 	}

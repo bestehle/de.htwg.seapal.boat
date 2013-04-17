@@ -57,6 +57,7 @@ public interface IBoatController extends IObservable {
 	String getString(String id);
 	
 	String newBoat();
+	void deleteBoat(String id);
 	void closeDB();
 	
 	Map<String, String> getBoats();

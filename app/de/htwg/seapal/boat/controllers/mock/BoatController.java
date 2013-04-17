@@ -345,5 +345,9 @@ public class BoatController extends Observable implements IBoatController {
 	public void closeDB() {
 	}
 
+	@Override
+	public void deleteBoat(String id) {
+	}
+
 	
 }
