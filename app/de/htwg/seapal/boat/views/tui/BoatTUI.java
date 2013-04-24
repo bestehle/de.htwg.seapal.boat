@@ -10,7 +10,7 @@ import com.google.inject.Inject;
 import de.htwg.seapal.boat.controllers.IBoatController;
 import de.htwg.seapal.boat.util.observer.Event;
 import de.htwg.seapal.boat.util.observer.IObserver;
-import de.htwg.util.plugin.Plugin;
+import de.htwg.seapal.common.plugin.Plugin;
 
 public class BoatTUI implements IObserver, Plugin {
 
