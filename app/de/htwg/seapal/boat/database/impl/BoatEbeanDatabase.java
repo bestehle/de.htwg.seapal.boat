@@ -61,8 +61,7 @@ public class BoatEbeanDatabase implements IBoatDatabase {
 
 	@Override
 	public boolean closeDB() {
-		
-		return false;
+		return true;
 	}
 
 }

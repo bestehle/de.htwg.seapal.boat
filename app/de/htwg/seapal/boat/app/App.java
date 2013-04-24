@@ -1,7 +1,12 @@
 package de.htwg.seapal.boat.app;
 
+import java.io.File;
 import java.util.Scanner;
 
+import play.api.Application;
+import play.api.DefaultApplication;
+import play.api.Mode;
+import play.api.Play;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -16,23 +21,36 @@ public class App {
 	 */
 	public static void main(String[] args) {
 
-		// Set up Google Guice Dependency Injector
-		Injector injector = Guice.createInjector(new BoatImplModule());
+		Application play = new DefaultApplication(new File("."),
+				App.class.getClassLoader(), null, Mode.Dev());
 
-		// Build up the application, resolving dependencies automatically by
-		// Guice
-		IBoatController controller = injector
-				.getInstance(IBoatController.class);
+		Play.start(play);
 
-		BoatTUI tui = new BoatTUI(controller);
+		try {
 
-		tui.printTUI();
-		// continue to read user input on the tui until the user decides to quit
-		boolean continu = true;
-		Scanner scanner = new Scanner(System.in);
-		while (continu) {
-			continu = tui.processInputLine(scanner.next());
+			// Set up Google Guice Dependency Injector
+			Injector injector = Guice.createInjector(new BoatImplModule());
+
+			// Build up the application, resolving dependencies automatically by
+			// Guice
+			IBoatController controller = injector
+					.getInstance(IBoatController.class);
+
+			BoatTUI tui = new BoatTUI(controller);
+
+			tui.printTUI();
+			// continue to read user input on the tui until the user decides to
+			// quit
+			boolean continu = true;
+			Scanner scanner = new Scanner(System.in);
+			while (continu) {
+				continu = tui.processInputLine(scanner.next());
+			}
+
+		} finally {
+			Play.stop();
 		}
+
 	}
 
 }

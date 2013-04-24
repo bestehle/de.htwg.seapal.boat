@@ -17,7 +17,7 @@ object ApplicationBuild extends Build {
     "com.db4o" % "db4o-full-java5" % "8.1-SNAPSHOT",
     
     "de.htwg.seapal" % "common" % "1.0-SNAPSHOT",
-    "de.htwg.seapal" % "person" % "1.0-SNAPSHOT"
+    "de.htwg.seapal" % "person" % "1.1-SNAPSHOT"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
