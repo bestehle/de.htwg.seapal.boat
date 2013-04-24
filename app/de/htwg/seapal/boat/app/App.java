@@ -13,6 +13,7 @@ import com.google.inject.Injector;
 
 import de.htwg.seapal.boat.controllers.IBoatController;
 import de.htwg.seapal.boat.views.tui.BoatTUI;
+import de.htwg.seapal.person.app.PersonDemoImplModule;
 
 public class App {
 
@@ -29,7 +30,7 @@ public class App {
 		try {
 
 			// Set up Google Guice Dependency Injector
-			Injector injector = Guice.createInjector(new BoatImplModule());
+			Injector injector = Guice.createInjector(new BoatImplModule(), new PersonDemoImplModule());
 
 			// Build up the application, resolving dependencies automatically by
 			// Guice

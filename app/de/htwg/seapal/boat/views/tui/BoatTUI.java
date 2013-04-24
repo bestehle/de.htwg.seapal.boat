@@ -63,7 +63,7 @@ public class BoatTUI implements IObserver, Plugin {
 
 	private void editBoat() {
 		System.out.print("\t ID: \t");
-		String stringId = "BOAT-" + scanner.next();
+		String stringId = scanner.next();
 		UUID id = UUID.fromString(stringId);
 		String Name = "";
 		try {
@@ -78,8 +78,8 @@ public class BoatTUI implements IObserver, Plugin {
 	}
 	
 	private void deleteBoat() {
-		System.out.print("\t ID: \t BOAT-");
-		String stringId = "BOAT-" + scanner.next();
+		System.out.print("\t ID: \t");
+		String stringId = scanner.next();
 		UUID id = UUID.fromString(stringId);
 		String Name = "";
 		try {
