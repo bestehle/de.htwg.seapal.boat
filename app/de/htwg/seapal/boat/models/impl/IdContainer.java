@@ -1,6 +1,11 @@
 package de.htwg.seapal.boat.models.impl;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class IdContainer {
+	@Id
 	private int id;
 
 	public int getId() {

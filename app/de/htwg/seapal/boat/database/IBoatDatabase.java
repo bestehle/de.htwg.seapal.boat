@@ -10,6 +10,5 @@ public interface IBoatDatabase {
 	void deleteBoat(String id);
 	IBoat getBoat(String id);
 	List<IBoat> getBoats();
-	String getNewId();
 	boolean closeDB();
 }
