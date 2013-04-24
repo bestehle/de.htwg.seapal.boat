@@ -1,45 +1,33 @@
 package de.htwg.seapal.boat.controllers.impl;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import com.avaje.ebean.Ebean;
+import com.db4o.query.Predicate;
+import com.google.inject.Inject;
 
 import de.htwg.seapal.boat.controllers.IBoatController;
-import de.htwg.seapal.boat.util.observer.Event;
-import de.htwg.seapal.boat.util.observer.IObserver;
+import de.htwg.seapal.boat.models.IBoat;
+import de.htwg.seapal.boat.util.observer.Observable;
+import de.htwg.seapal.person.controllers.IPersonController;
 
-public class BoatControllerEBean implements IBoatController {
+public class BoatControllerEBean extends Observable implements IBoatController {
+
+	protected IPersonController personContoller;
+	private IBoat boat;
+
+	@Inject
+	public BoatControllerEBean(IBoat boat, IPersonController personController) {
+		this.personContoller = personController;
+		this.boat = boat;
+	}
 	
-	
-
-	@Override
-	public void addObserver(IObserver s) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void removeObserver(IObserver s) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void removeAllObservers() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void notifyObservers() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void notifyObservers(Event e) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	@Override
 	public String getBootsname(String id) {
 		// TODO Auto-generated method stub
@@ -48,8 +36,9 @@ public class BoatControllerEBean implements IBoatController {
 
 	@Override
 	public void setBootsname(String id, String bootsname) {
-		// TODO Auto-generated method stub
-		
+		IBoat boat = getBoat(id);
+		boat.setBootsname(bootsname);
+		Ebean.save(boat);
 	}
 
 	@Override
@@ -336,8 +325,11 @@ public class BoatControllerEBean implements IBoatController {
 
 	@Override
 	public String newBoat() {
-		// TODO Auto-generated method stub
-		return null;
+		IBoat newBoat = boat.getInstance();
+		String id = getNewId();
+		newBoat.setId(id);
+		Ebean.save(newBoat);
+		return id;
 	}
 
 	@Override
@@ -354,8 +346,12 @@ public class BoatControllerEBean implements IBoatController {
 
 	@Override
 	public Map<String, String> getBoats() {
-		// TODO Auto-generated method stub
-		return null;
+		List<IBoat> boats = Ebean.find(IBoat.class).findList();
+		Map<String, String> map = new HashMap<String, String>();
+		for (IBoat boat : boats) {
+			map.put(boat.getId(), boat.getBootsname());
+		}
+		return map;
 	}
 
 	@Override
@@ -376,4 +372,43 @@ public class BoatControllerEBean implements IBoatController {
 		return null;
 	}
 	
+	private String getNewId() {
+		IdContainer currentId;
+		List<IdContainer> query = Ebean.find(IdContainer.class).findList();
+		if (query.isEmpty()) {
+			currentId = new IdContainer(0);
+			Ebean.save(currentId);
+		} else {
+			currentId = query.get(0);
+			currentId.setId(currentId.getId() + 1);
+			Ebean.save(currentId);
+		}
+		return "BOAT-" + currentId.getId();
+	}
+	
+	private IBoat getBoat(final String id) {
+		IBoat boat = Ebean.find(IBoat.class, id);
+		if (boat == null)
+			throw new NoSuchElementException("No Boat for id : " + id);
+		return boat;
+	}
+
+	@Entity
+	private static class IdContainer {
+		@Id
+		private int id;
+
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public IdContainer(int id) {
+			this.id = id;
+		}
+
+	}	
 }

@@ -17,7 +17,7 @@ public class App {
 	public static void main(String[] args) {
 
 		// Set up Google Guice Dependency Injector
-		Injector injector = Guice.createInjector(new AppImplModule());
+		Injector injector = Guice.createInjector(new BoatImplModule());
 
 		// Build up the application, resolving dependencies automatically by
 		// Guice

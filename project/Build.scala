@@ -16,7 +16,7 @@ object ApplicationBuild extends Build {
     "com.google.inject.extensions" % "guice-multibindings" % "3.0",
     "com.db4o" % "db4o-full-java5" % "8.1-SNAPSHOT",
     
-    "de.htwg" % "util" % "1.0-SNAPSHOT",
+    "de.htwg.seapal" % "common" % "1.0-SNAPSHOT",
     "de.htwg.seapal" % "person" % "1.0-SNAPSHOT"
   )
 
