@@ -117,5 +117,5 @@ public interface IBoatController extends IObservable {
 
 	Map<String, String> getPersons();
 
-	String getPersonBoatNameById(String id);
+	String getPersonNameById(String id);
 }
