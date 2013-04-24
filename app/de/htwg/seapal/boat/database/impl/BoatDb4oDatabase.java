@@ -2,6 +2,7 @@ package de.htwg.seapal.boat.database.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.UUID;
 
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
@@ -10,7 +11,6 @@ import com.db4o.query.Predicate;
 import de.htwg.seapal.boat.database.IBoatDatabase;
 import de.htwg.seapal.boat.models.IBoat;
 import de.htwg.seapal.boat.models.impl.Boat;
-import de.htwg.seapal.boat.models.impl.IdContainer;
 
 public class BoatDb4oDatabase implements IBoatDatabase {
 
@@ -21,12 +21,10 @@ public class BoatDb4oDatabase implements IBoatDatabase {
 	}
 
 	@Override
-	public String newBoat() {
+	public UUID newBoat() {
 		IBoat boat = new Boat();
-		String id = getNewId();
-		boat.setId(id);
 		saveBoat(boat);
-		return id;
+		return boat.getId();
 	}
 
 	@Override
@@ -35,12 +33,12 @@ public class BoatDb4oDatabase implements IBoatDatabase {
 	}
 
 	@Override
-	public void deleteBoat(String id) {
+	public void deleteBoat(UUID id) {
 		db.delete(getBoat(id));
 	}
 
 	@Override
-	public IBoat getBoat(final String id) {
+	public IBoat getBoat(final UUID id) {
 		@SuppressWarnings("serial")
 		List<IBoat> query = db.query(new Predicate<IBoat>() {
 			@Override
@@ -57,20 +55,6 @@ public class BoatDb4oDatabase implements IBoatDatabase {
 	@Override
 	public List<IBoat> getBoats() {
 		return db.query(IBoat.class);
-	}
-
-	private String getNewId() {
-		IdContainer currentId;
-		List<IdContainer> query = db.query(IdContainer.class);
-		if (query.isEmpty()) {
-			currentId = new IdContainer(0);
-			db.store(currentId);
-		} else {
-			currentId = query.get(0);
-			currentId.setId(currentId.getId() + 1);
-			db.store(currentId);
-		}
-		return "BOAT-" + currentId.getId();
 	}
 
 	@Override

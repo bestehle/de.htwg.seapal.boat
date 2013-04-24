@@ -3,6 +3,7 @@ package de.htwg.seapal.boat.controllers.impl;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import com.google.inject.Inject;
 
@@ -16,7 +17,6 @@ public class BoatController extends Observable implements IBoatController {
 
 	protected IPersonController personContoller;
 	protected IBoatDatabase db;
-	
 
 	@Inject
 	public BoatController(IBoatDatabase db, IPersonController personController) {
@@ -29,36 +29,36 @@ public class BoatController extends Observable implements IBoatController {
 		List<IBoat> query = db.getBoats();
 		Map<String, String> map = new HashMap<String, String>();
 		for (IBoat boat : query) {
-			map.put(boat.getId(), boat.getBootsname());
+			map.put(boat.getId().toString(), boat.getName());
 		}
 		return map;
 	}
 
 	@Override
-	public String getBootsnameById(String id) {
-		return getBootsname(id);
+	public String getNameById(UUID id) {
+		return getName(id);
 	}
 
 	@Override
-	public String getBootsname(final String id) {
-		return db.getBoat(id).getBootsname();
+	public String getName(final UUID id) {
+		return db.getBoat(id).getName();
 	}
 
 	@Override
-	public void setBootsname(String id, String bootsname) {
+	public void setName(UUID id, String Name) {
 		IBoat boat = db.getBoat(id);
-		boat.setBootsname(bootsname);
+		boat.setName(Name);
 		db.saveBoat(boat);
 		notifyObservers();
 	}
 
 	@Override
-	public String getRegisterNr(String id) {
+	public String getRegisterNr(UUID id) {
 		return db.getBoat(id).getRegisterNr();
 	}
 
 	@Override
-	public void setRegisterNr(String id, String registerNr) {
+	public void setRegisterNr(UUID id, String registerNr) {
 		IBoat boat = db.getBoat(id);
 		boat.setRegisterNr(registerNr);
 		db.saveBoat(boat);
@@ -66,12 +66,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getSegelzeichen(String id) {
+	public String getSegelzeichen(UUID id) {
 		return db.getBoat(id).getSegelzeichen();
 	}
 
 	@Override
-	public void setSegelzeichen(String id, String segelzeichen) {
+	public void setSegelzeichen(UUID id, String segelzeichen) {
 		IBoat boat = db.getBoat(id);
 		boat.setSegelzeichen(segelzeichen);
 		db.saveBoat(boat);
@@ -79,12 +79,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getHeimathafen(String id) {
+	public String getHeimathafen(UUID id) {
 		return db.getBoat(id).getHeimathafen();
 	}
 
 	@Override
-	public void setHeimathafen(String id, String heimathafen) {
+	public void setHeimathafen(UUID id, String heimathafen) {
 		IBoat boat = db.getBoat(id);
 		boat.setHeimathafen(heimathafen);
 		db.saveBoat(boat);
@@ -92,12 +92,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getYachtclub(String id) {
+	public String getYachtclub(UUID id) {
 		return db.getBoat(id).getYachtclub();
 	}
 
 	@Override
-	public void setYachtclub(String id, String yachtclub) {
+	public void setYachtclub(UUID id, String yachtclub) {
 		IBoat boat = db.getBoat(id);
 		boat.setYachtclub(yachtclub);
 		db.saveBoat(boat);
@@ -105,12 +105,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getEigner(String id) {
+	public String getEigner(UUID id) {
 		return db.getBoat(id).getEigner();
 	}
 
 	@Override
-	public void setEigner(String id, String eigner) {
+	public void setEigner(UUID id, String eigner) {
 		IBoat boat = db.getBoat(id);
 		boat.setEigner(eigner);
 		db.saveBoat(boat);
@@ -118,12 +118,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getVersicherung(String id) {
+	public String getVersicherung(UUID id) {
 		return db.getBoat(id).getVersicherung();
 	}
 
 	@Override
-	public void setVersicherung(String id, String versicherung) {
+	public void setVersicherung(UUID id, String versicherung) {
 		IBoat boat = db.getBoat(id);
 		boat.setVersicherung(versicherung);
 		db.saveBoat(boat);
@@ -131,12 +131,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getRufzeichen(String id) {
+	public String getRufzeichen(UUID id) {
 		return db.getBoat(id).getRufzeichen();
 	}
 
 	@Override
-	public void setRufzeichen(String id, String rufzeichen) {
+	public void setRufzeichen(UUID id, String rufzeichen) {
 		IBoat boat = db.getBoat(id);
 		boat.setRufzeichen(rufzeichen);
 		db.saveBoat(boat);
@@ -144,12 +144,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getTyp(String id) {
+	public String getTyp(UUID id) {
 		return db.getBoat(id).getTyp();
 	}
 
 	@Override
-	public void setTyp(String id, String typ) {
+	public void setTyp(UUID id, String typ) {
 		IBoat boat = db.getBoat(id);
 		boat.setTyp(typ);
 		db.saveBoat(boat);
@@ -157,12 +157,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getKonstrukteur(String id) {
+	public String getKonstrukteur(UUID id) {
 		return db.getBoat(id).getKonstrukteur();
 	}
 
 	@Override
-	public void setKonstrukteur(String id, String konstrukteur) {
+	public void setKonstrukteur(UUID id, String konstrukteur) {
 		IBoat boat = db.getBoat(id);
 		boat.setKonstrukteur(konstrukteur);
 		db.saveBoat(boat);
@@ -170,12 +170,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getLaenge(String id) {
+	public double getLaenge(UUID id) {
 		return db.getBoat(id).getLaenge();
 	}
 
 	@Override
-	public void setLaenge(String id, double laenge) {
+	public void setLaenge(UUID id, double laenge) {
 		IBoat boat = db.getBoat(id);
 		boat.setLaenge(laenge);
 		db.saveBoat(boat);
@@ -183,12 +183,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getBreite(String id) {
+	public double getBreite(UUID id) {
 		return db.getBoat(id).getBreite();
 	}
 
 	@Override
-	public void setBreite(String id, double breite) {
+	public void setBreite(UUID id, double breite) {
 		IBoat boat = db.getBoat(id);
 		boat.setBreite(breite);
 		db.saveBoat(boat);
@@ -196,12 +196,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getTiefgang(String id) {
+	public double getTiefgang(UUID id) {
 		return db.getBoat(id).getTiefgang();
 	}
 
 	@Override
-	public void setTiefgang(String id, double tiefgang) {
+	public void setTiefgang(UUID id, double tiefgang) {
 		IBoat boat = db.getBoat(id);
 		boat.setTiefgang(tiefgang);
 		db.saveBoat(boat);
@@ -209,12 +209,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getMasthoehe(String id) {
+	public double getMasthoehe(UUID id) {
 		return db.getBoat(id).getMasthoehe();
 	}
 
 	@Override
-	public void setMasthoehe(String id, double masthoehe) {
+	public void setMasthoehe(UUID id, double masthoehe) {
 		IBoat boat = db.getBoat(id);
 		boat.setMasthoehe(masthoehe);
 		db.saveBoat(boat);
@@ -222,12 +222,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getVerdraengung(String id) {
+	public double getVerdraengung(UUID id) {
 		return db.getBoat(id).getVerdraengung();
 	}
 
 	@Override
-	public void setVerdraengung(String id, double verdraengung) {
+	public void setVerdraengung(UUID id, double verdraengung) {
 		IBoat boat = db.getBoat(id);
 		boat.setVerdraengung(verdraengung);
 		db.saveBoat(boat);
@@ -235,12 +235,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getRiggArt(String id) {
+	public String getRiggArt(UUID id) {
 		return db.getBoat(id).getRiggArt();
 	}
 
 	@Override
-	public void setRiggArt(String id, String riggArt) {
+	public void setRiggArt(UUID id, String riggArt) {
 		IBoat boat = db.getBoat(id);
 		boat.setRiggArt(riggArt);
 		db.saveBoat(boat);
@@ -248,12 +248,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public int getBaujahr(String id) {
+	public int getBaujahr(UUID id) {
 		return db.getBoat(id).getBaujahr();
 	}
 
 	@Override
-	public void setBaujahr(String id, int baujahr) {
+	public void setBaujahr(UUID id, int baujahr) {
 		IBoat boat = db.getBoat(id);
 		boat.setBaujahr(baujahr);
 		db.saveBoat(boat);
@@ -261,12 +261,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getMotor(String id) {
+	public String getMotor(UUID id) {
 		return db.getBoat(id).getMotor();
 	}
 
 	@Override
-	public void setMotor(String id, String motor) {
+	public void setMotor(UUID id, String motor) {
 		IBoat boat = db.getBoat(id);
 		boat.setMotor(motor);
 		db.saveBoat(boat);
@@ -274,12 +274,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getTankGroesse(String id) {
+	public double getTankGroesse(UUID id) {
 		return db.getBoat(id).getTankGroesse();
 	}
 
 	@Override
-	public void setTankGroesse(String id, double tankGroesse) {
+	public void setTankGroesse(UUID id, double tankGroesse) {
 		IBoat boat = db.getBoat(id);
 		boat.setTankGroesse(tankGroesse);
 		db.saveBoat(boat);
@@ -287,12 +287,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getWassertankGroesse(String id) {
+	public double getWassertankGroesse(UUID id) {
 		return db.getBoat(id).getWassertankGroesse();
 	}
 
 	@Override
-	public void setWassertankGroesse(String id, double wassertankGroesse) {
+	public void setWassertankGroesse(UUID id, double wassertankGroesse) {
 		IBoat boat = db.getBoat(id);
 		boat.setWassertankGroesse(wassertankGroesse);
 		db.saveBoat(boat);
@@ -300,12 +300,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getAbwassertankGroesse(String id) {
+	public double getAbwassertankGroesse(UUID id) {
 		return db.getBoat(id).getAbwassertankGroesse();
 	}
 
 	@Override
-	public void setAbwassertankGroesse(String id, double abwassertankGroesse) {
+	public void setAbwassertankGroesse(UUID id, double abwassertankGroesse) {
 		IBoat boat = db.getBoat(id);
 		boat.setAbwassertankGroesse(abwassertankGroesse);
 		db.saveBoat(boat);
@@ -313,12 +313,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getGrosssegelGroesse(String id) {
+	public double getGrosssegelGroesse(UUID id) {
 		return db.getBoat(id).getGrosssegelGroesse();
 	}
 
 	@Override
-	public void setGrosssegelGroesse(String id, double grosssegelGroesse) {
+	public void setGrosssegelGroesse(UUID id, double grosssegelGroesse) {
 		IBoat boat = db.getBoat(id);
 		boat.setGrosssegelGroesse(grosssegelGroesse);
 		db.saveBoat(boat);
@@ -326,12 +326,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getGenuaGroesse(String id) {
+	public double getGenuaGroesse(UUID id) {
 		return db.getBoat(id).getGenuaGroesse();
 	}
 
 	@Override
-	public void setGenuaGroesse(String id, double genuaGroesse) {
+	public void setGenuaGroesse(UUID id, double genuaGroesse) {
 		IBoat boat = db.getBoat(id);
 		boat.setGenuaGroesse(genuaGroesse);
 		db.saveBoat(boat);
@@ -339,12 +339,12 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getSpiGroesse(String id) {
+	public double getSpiGroesse(UUID id) {
 		return db.getBoat(id).getSpiGroesse();
 	}
 
 	@Override
-	public void setSpiGroesse(String id, double spiGroesse) {
+	public void setSpiGroesse(UUID id, double spiGroesse) {
 		IBoat boat = db.getBoat(id);
 		boat.setSpiGroesse(spiGroesse);
 		db.saveBoat(boat);
@@ -352,15 +352,15 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getString(String id) {
-		return "Bootsname = " + getBootsname(id) + ", ID = " + id
-				+ ", RegisterNr = " + getRegisterNr(id) + ", Segelzeichen = "
-				+ getSegelzeichen(id) + ", Heimathafen = " + getHeimathafen(id)
-				+ ", Yachtclub = " + getYachtclub(id) + ", Eigner = "
-				+ getEigner(id) + ", Versicherung = " + getVersicherung(id)
-				+ ", Rufzeichen = " + getRufzeichen(id) + ", Typ = "
-				+ getTyp(id) + ", Konstrukteur = " + getKonstrukteur(id)
-				+ ", Laenge = " + getLaenge(id) + ", Breite = " + getBreite(id)
+	public String getString(UUID id) {
+		return "Name = " + getName(id) + ", ID = " + id + ", RegisterNr = "
+				+ getRegisterNr(id) + ", Segelzeichen = " + getSegelzeichen(id)
+				+ ", Heimathafen = " + getHeimathafen(id) + ", Yachtclub = "
+				+ getYachtclub(id) + ", Eigner = " + getEigner(id)
+				+ ", Versicherung = " + getVersicherung(id) + ", Rufzeichen = "
+				+ getRufzeichen(id) + ", Typ = " + getTyp(id)
+				+ ", Konstrukteur = " + getKonstrukteur(id) + ", Laenge = "
+				+ getLaenge(id) + ", Breite = " + getBreite(id)
 				+ ", Tiefgang = " + getTiefgang(id) + ", Masthoehe = "
 				+ getMasthoehe(id) + ", Verdraengung = " + getVerdraengung(id)
 				+ ", RiggArt = " + getRiggArt(id) + ", Baujahr = "
@@ -385,7 +385,7 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String newBoat() {
+	public UUID newBoat() {
 		return db.newBoat();
 	}
 
@@ -394,7 +394,7 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public void deleteBoat(String id) {
+	public void deleteBoat(UUID id) {
 		db.deleteBoat(id);
 		notifyObservers();
 	}

@@ -1,14 +1,21 @@
 package de.htwg.seapal.boat.database;
 
 import java.util.List;
+import java.util.UUID;
 
 import de.htwg.seapal.boat.models.IBoat;
 
 public interface IBoatDatabase {
-	String newBoat();
+
+	UUID newBoat();
+
 	void saveBoat(IBoat boat);
-	void deleteBoat(String id);
-	IBoat getBoat(String id);
+
+	void deleteBoat(UUID id);
+
+	IBoat getBoat(UUID id);
+
 	List<IBoat> getBoats();
+
 	boolean closeDB();
 }

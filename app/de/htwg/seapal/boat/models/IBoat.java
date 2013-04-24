@@ -1,11 +1,12 @@
 package de.htwg.seapal.boat.models;
 
+import java.util.UUID;
+
 public interface IBoat {
 	
-	public String getId();
-	public void setId(String id);
-	public String getBootsname();
-	public void setBootsname(String bootsname);
+	public UUID getId();
+	public String getName();
+	public void setName(String Name);
 	public String getRegisterNr();
 	public void setRegisterNr(String registerNr);
 	public String getSegelzeichen();

@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import java.util.UUID;
 
 import com.google.inject.Inject;
 
@@ -35,8 +36,8 @@ public class BoatTUI implements IObserver, Plugin {
 					System.out.println(listBoats());
 					break;
 				case 's':
-					System.out.print("\t ID: \t BOAT-");
-					System.out.println(showBoat("BOAT-" + scanner.next()));
+					System.out.print("\t ID: \t");
+					System.out.println(showBoat(UUID.fromString(scanner.next())));
 					break;
 				case 'n':
 					newBoat();
@@ -61,44 +62,46 @@ public class BoatTUI implements IObserver, Plugin {
 	}
 
 	private void editBoat() {
-		System.out.print("\t ID: \t BOAT-");
-		String id = "BOAT-" + scanner.next();
-		String bootsname = "";
+		System.out.print("\t ID: \t");
+		String stringId = "BOAT-" + scanner.next();
+		UUID id = UUID.fromString(stringId);
+		String Name = "";
 		try {
-			bootsname = controller.getBootsname(id);
+			Name = controller.getName(id);
 		} catch (NoSuchElementException e) {
 			System.out.println("\t " + e.getMessage());
 			return;
 		}
-		System.out.print("\t " + bootsname + ": set Bootsname to : ");
-		bootsname = scanner.next();
-		controller.setBootsname(id, bootsname);		
+		System.out.print("\t " + Name + ": set Name to : ");
+		Name = scanner.next();
+		controller.setName(id, Name);		
 	}
 	
 	private void deleteBoat() {
 		System.out.print("\t ID: \t BOAT-");
-		String id = "BOAT-" + scanner.next();
-		String bootsname = "";
+		String stringId = "BOAT-" + scanner.next();
+		UUID id = UUID.fromString(stringId);
+		String Name = "";
 		try {
-			bootsname = controller.getBootsname(id);
+			Name = controller.getName(id);
 		} catch (NoSuchElementException e) {
 			System.out.println("\t " + e.getMessage());
 			return;
 		}
 		controller.deleteBoat(id);
-		System.out.println("\t Deleted Boat:" + bootsname);
+		System.out.println("\t Deleted Boat:" + Name);
 	}
 
 	private void newBoat() {
-		System.out.print("\t Bootsname:\t");
-		String bootsname = scanner.next();
-		String id = controller.newBoat();
-		controller.setBootsname(id, bootsname);
+		System.out.print("\t Name:\t");
+		String Name = scanner.next();
+		UUID id = controller.newBoat();
+		controller.setName(id, Name);
 	}
 
 	private String listBoats() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("\t ID \t\t Bootsname\n");
+		sb.append("\t ID \t\t Name\n");
 		sb.append("\t ----------- \t -----------\n");
 		Map<String, String> boats = controller.getBoats();
 		for (Entry<String, String> entry : boats.entrySet()) {
@@ -107,7 +110,7 @@ public class BoatTUI implements IObserver, Plugin {
 		return sb.toString();
 	}
 
-	private String showBoat(String id) {
+	private String showBoat(UUID id) {
 		try {
 			return "\t " + controller.getString(id);
 		} catch (NoSuchElementException e) {
