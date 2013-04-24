@@ -3,17 +3,12 @@ package de.htwg.seapal.boat.controllers.impl;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
-import com.db4o.Db4oEmbedded;
-import com.db4o.ObjectContainer;
-import com.db4o.query.Predicate;
 import com.google.inject.Inject;
 
 import de.htwg.seapal.boat.controllers.IBoatController;
 import de.htwg.seapal.boat.database.IBoatDatabase;
 import de.htwg.seapal.boat.models.IBoat;
-import de.htwg.seapal.boat.models.impl.IdContainer;
 import de.htwg.seapal.boat.util.observer.Observable;
 import de.htwg.seapal.person.controllers.IPersonController;
 

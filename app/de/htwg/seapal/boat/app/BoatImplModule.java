@@ -6,8 +6,6 @@ import com.google.inject.AbstractModule;
 import de.htwg.seapal.boat.controllers.IBoatController;
 import de.htwg.seapal.boat.database.IBoatDatabase;
 import de.htwg.seapal.boat.models.IBoat;
-import de.htwg.seapal.person.controllers.IPersonController;
-import de.htwg.seapal.person.models.IPerson;
 
 public class BoatImplModule extends AbstractModule {
 
