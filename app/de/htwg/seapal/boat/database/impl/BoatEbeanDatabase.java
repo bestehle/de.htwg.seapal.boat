@@ -28,7 +28,7 @@ public class BoatEbeanDatabase implements IBoatDatabase {
 
 	@Override
 	public void deleteBoat(String id) {
-		// TODO Auto-generated method stub
+		Ebean.delete(Boat.class, id);
 
 	}
 
@@ -61,7 +61,7 @@ public class BoatEbeanDatabase implements IBoatDatabase {
 
 	@Override
 	public boolean closeDB() {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
