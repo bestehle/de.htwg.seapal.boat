@@ -8,7 +8,7 @@ import de.htwg.seapal.boat.models.IBoat;
 import de.htwg.seapal.person.controllers.IPersonController;
 import de.htwg.seapal.person.models.IPerson;
 
-public class AppMockModule extends AbstractModule {
+public class BoatMockModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
