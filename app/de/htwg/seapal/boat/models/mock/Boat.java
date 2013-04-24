@@ -12,12 +12,12 @@ public class Boat implements IBoat {
 	}
 
 	@Override
-	public String getName() {
+	public String getBoatName() {
 		return "Black Pearl";
 	}
 
 	@Override
-	public void setName(String Name) {
+	public void setBoatName(String boatName) {
 	}
 
 	@Override
@@ -30,21 +30,21 @@ public class Boat implements IBoat {
 	}
 
 	@Override
-	public String getSegelzeichen() {
+	public String getSailSign() {
 		return "KN1520";
 	}
 
 	@Override
-	public void setSegelzeichen(String segelzeichen) {
+	public void setSailSign(String sailSign) {
 	}
 
 	@Override
-	public String getHeimathafen() {
+	public String getHomePort() {
 		return "Konstanz";
 	}
 
 	@Override
-	public void setHeimathafen(String heimathafen) {
+	public void setHomePort(String homePort) {
 	}
 
 	@Override
@@ -57,111 +57,111 @@ public class Boat implements IBoat {
 	}
 
 	@Override
-	public String getEigner() {
+	public String getOwner() {
 		return "Jack Sparrow";
 	}
 
 	@Override
-	public void setEigner(String eigner) {
+	public void setOwner(String owner) {
 	}
 
 	@Override
-	public String getVersicherung() {
+	public String getInsurance() {
 		return "HukPiraten";
 	}
 
 	@Override
-	public void setVersicherung(String versicherung) {
+	public void setInsurance(String insurance) {
 	}
 
 	@Override
-	public String getRufzeichen() {
+	public String getCallSign() {
 		return "Schwarze Segel";
 	}
 
 	@Override
-	public void setRufzeichen(String rufzeichen) {
+	public void setCallSign(String callSign) {
 	}
 
 	@Override
-	public String getTyp() {
+	public String getType() {
 		return "Segelboot";
 	}
 
 	@Override
-	public void setTyp(String typ) {
+	public void setType(String type) {
 	}
 
 	@Override
-	public String getKonstrukteur() {
+	public String getConstructor() {
 		return "Davy Jones";
 	}
 
 	@Override
-	public void setKonstrukteur(String konstrukteur) {
+	public void setConstructor(String constructor) {
 	}
 
 	@Override
-	public double getLaenge() {
+	public double getLength() {
 		return 40;
 	}
 
 	@Override
-	public void setLaenge(double laenge) {
+	public void setLength(double length) {
 	}
 
 	@Override
-	public double getBreite() {
+	public double getWidth() {
 		return 15;
 	}
 
 	@Override
-	public void setBreite(double breite) {
+	public void setWidth(double width) {
 	}
 
 	@Override
-	public double getTiefgang() {
+	public double getDraft() {
 		return 3;
 	}
 
 	@Override
-	public void setTiefgang(double tiefgang) {
+	public void setDraft(double draft) {
 	}
 
 	@Override
-	public double getMasthoehe() {
+	public double getMastHeight() {
 		return 25;
 	}
 
 	@Override
-	public void setMasthoehe(double masthoehe) {
+	public void setMastHeight(double mastHeight) {
 	}
 
 	@Override
-	public double getVerdraengung() {
+	public double getDisplacement() {
 		return 250;
 	}
 
 	@Override
-	public void setVerdraengung(double verdraengung) {
+	public void setDisplacement(double displacement) {
 	}
 
 	@Override
-	public String getRiggArt() {
-		return "riggArt";
+	public String getRigging() {
+		return "rigging";
 	}
 
 	@Override
-	public void setRiggArt(String riggArt) {
+	public void setRigging(String rigging) {
 	}
 
 	@Override
-	public int getBaujahr() {
+	public int getYearOfConstruction() {
 		return 1250;
 	}
 
 	@Override
-	public void setBaujahr(int baujahr) {
+	public void setYearOfConstruction(int yearOfConstruction) {
 	}
 
 	@Override
@@ -174,57 +174,57 @@ public class Boat implements IBoat {
 	}
 
 	@Override
-	public double getTankGroesse() {
+	public double getTankSize() {
 		return 220;
 	}
 
 	@Override
-	public void setTankGroesse(double tankGroesse) {
+	public void setTankSize(double tankSize) {
 	}
 
 	@Override
-	public double getWassertankGroesse() {
+	public double getWasteWaterTankSize() {
 		return 400;
 	}
 
 	@Override
-	public void setWassertankGroesse(double wassertankGroesse) {
+	public void setWasteWaterTankSize(double wasteWaterTankSize) {
 	}
 
 	@Override
-	public double getAbwassertankGroesse() {
+	public double getFreshWaterTankSize() {
 		return 60;
 	}
 
 	@Override
-	public void setAbwassertankGroesse(double abwassertankGroesse) {
+	public void setFreshWaterTankSize(double freshWaterTankSize) {
 	}
 
 	@Override
-	public double getGrosssegelGroesse() {
+	public double getMainSailSize() {
 		return 30;
 	}
 
 	@Override
-	public void setGrosssegelGroesse(double grosssegelGroesse) {
+	public void setMainSailSize(double mainSailSize) {
 	}
 
 	@Override
-	public double getGenuaGroesse() {
+	public double getGenuaSize() {
 		return 25;
 	}
 
 	@Override
-	public void setGenuaGroesse(double genuaGroesse) {
+	public void setGenuaSize(double genuaSize) {
 	}
 
 	@Override
-	public double getSpiGroesse() {
+	public double getSpiSize() {
 		return 32.5;
 	}
 
 	@Override
-	public void setSpiGroesse(double spiGroesse) {
+	public void setSpiSize(double spiSize) {
 	}
 
 }

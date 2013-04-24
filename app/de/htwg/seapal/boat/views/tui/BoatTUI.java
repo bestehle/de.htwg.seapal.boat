@@ -65,43 +65,43 @@ public class BoatTUI implements IObserver, Plugin {
 		System.out.print("\t ID: \t");
 		String stringId = scanner.next();
 		UUID id = UUID.fromString(stringId);
-		String Name = "";
+		String BoatName = "";
 		try {
-			Name = controller.getName(id);
+			BoatName = controller.getBoatName(id);
 		} catch (NoSuchElementException e) {
 			System.out.println("\t " + e.getMessage());
 			return;
 		}
-		System.out.print("\t " + Name + ": set Name to : ");
-		Name = scanner.next();
-		controller.setName(id, Name);		
+		System.out.print("\t " + BoatName + ": set BoatName to : ");
+		BoatName = scanner.next();
+		controller.setBoatName(id, BoatName);		
 	}
 	
 	private void deleteBoat() {
 		System.out.print("\t ID: \t");
 		String stringId = scanner.next();
 		UUID id = UUID.fromString(stringId);
-		String Name = "";
+		String BoatName = "";
 		try {
-			Name = controller.getName(id);
+			BoatName = controller.getBoatName(id);
 		} catch (NoSuchElementException e) {
 			System.out.println("\t " + e.getMessage());
 			return;
 		}
 		controller.deleteBoat(id);
-		System.out.println("\t Deleted Boat:" + Name);
+		System.out.println("\t Deleted Boat:" + BoatName);
 	}
 
 	private void newBoat() {
-		System.out.print("\t Name:\t");
-		String Name = scanner.next();
+		System.out.print("\t BoatName:\t");
+		String BoatName = scanner.next();
 		UUID id = controller.newBoat();
-		controller.setName(id, Name);
+		controller.setBoatName(id, BoatName);
 	}
 
 	private String listBoats() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("\t ID \t\t Name\n");
+		sb.append("\t ID \t\t BoatName\n");
 		sb.append("\t ----------- \t -----------\n");
 		Map<String, String> boats = controller.getBoats();
 		for (Entry<String, String> entry : boats.entrySet()) {

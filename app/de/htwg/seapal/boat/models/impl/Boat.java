@@ -17,44 +17,48 @@ public class Boat implements IBoat {
 	@Id
 	private UUID id;
 
-	private String Name;
+	private String boatName;
 	private String registerNr;
-	private String segelzeichen;
-	private String heimathafen;
+	private String sailSign;
+	private String homePort;
 	private String yachtclub;
-	private String eigner;
-	private String versicherung;
-	private String rufzeichen;
-	private String typ;
-	private String konstrukteur;
-	private double laenge;
-	private double breite;
-	private double tiefgang;
-	private double masthoehe;
-	private double verdraengung;
-	private String riggArt;
-	private int baujahr;
+	private String owner;
+	private String insurance;
+	private String callSign;
+	private String type;
+	private String constructor;
+	private double length;
+	private double width;
+	private double draft;
+	private double mastHeight;
+	private double displacement;
+	private String rigging;
+	private int yearOfConstruction;
 	private String motor;
-	private double tankGroesse;
-	private double wassertankGroesse;
-	private double abwassertankGroesse;
-	private double grosssegelGroesse;
-	private double genuaGroesse;
-	private double spiGroesse;
+	private double tankSize;
+	private double wasteWaterTankSize;
+	private double freshWaterTankSize;
+	private double mainSailSize;
+	private double genuaSize;
+	private double spiSize;
 
 	@Override
 	public UUID getId() {
 		return id;
 	}
-
-	@Override
-	public String getName() {
-		return Name;
+	
+	public void setId(UUID id)	{
+		this.id = id;
 	}
 
 	@Override
-	public void setName(String Name) {
-		this.Name = Name;
+	public String getBoatName() {
+		return boatName;
+	}
+
+	@Override
+	public void setBoatName(String boatName) {
+		this.boatName = boatName;
 	}
 
 	@Override
@@ -68,23 +72,23 @@ public class Boat implements IBoat {
 	}
 
 	@Override
-	public String getSegelzeichen() {
-		return segelzeichen;
+	public String getSailSign() {
+		return sailSign;
 	}
 
 	@Override
-	public void setSegelzeichen(String segelzeichen) {
-		this.segelzeichen = segelzeichen;
+	public void setSailSign(String sailSign) {
+		this.sailSign = sailSign;
 	}
 
 	@Override
-	public String getHeimathafen() {
-		return heimathafen;
+	public String getHomePort() {
+		return homePort;
 	}
 
 	@Override
-	public void setHeimathafen(String heimathafen) {
-		this.heimathafen = heimathafen;
+	public void setHomePort(String homePort) {
+		this.homePort = homePort;
 	}
 
 	@Override
@@ -98,123 +102,123 @@ public class Boat implements IBoat {
 	}
 
 	@Override
-	public String getEigner() {
-		return eigner;
+	public String getOwner() {
+		return owner;
 	}
 
 	@Override
-	public void setEigner(String eigner) {
-		this.eigner = eigner;
+	public void setOwner(String owner) {
+		this.owner = owner;
 	}
 
 	@Override
-	public String getVersicherung() {
-		return versicherung;
+	public String getInsurance() {
+		return insurance;
 	}
 
 	@Override
-	public void setVersicherung(String versicherung) {
-		this.versicherung = versicherung;
+	public void setInsurance(String insurance) {
+		this.insurance = insurance;
 	}
 
 	@Override
-	public String getRufzeichen() {
-		return rufzeichen;
+	public String getCallSign() {
+		return callSign;
 	}
 
 	@Override
-	public void setRufzeichen(String rufzeichen) {
-		this.rufzeichen = rufzeichen;
+	public void setCallSign(String callSign) {
+		this.callSign = callSign;
 	}
 
 	@Override
-	public String getTyp() {
-		return typ;
+	public String getType() {
+		return type;
 	}
 
 	@Override
-	public void setTyp(String typ) {
-		this.typ = typ;
+    public void setType(String type) {
+		this.type = type;
 	}
 
 	@Override
-	public String getKonstrukteur() {
-		return konstrukteur;
+	public String getConstructor() {
+		return constructor;
 	}
 
 	@Override
-	public void setKonstrukteur(String konstrukteur) {
-		this.konstrukteur = konstrukteur;
+	public void setConstructor(String constructor) {
+		this.constructor = constructor;
 	}
 
 	@Override
-	public double getLaenge() {
-		return laenge;
+	public double getLength() {
+		return length;
 	}
 
 	@Override
-	public void setLaenge(double laenge) {
-		this.laenge = laenge;
+	public void setLength(double length) {
+		this.length = length;
 	}
 
 	@Override
-	public double getBreite() {
-		return breite;
+	public double getWidth() {
+		return width;
 	}
 
 	@Override
-	public void setBreite(double breite) {
-		this.breite = breite;
+	public void setWidth(double width) {
+		this.width = width;
 	}
 
 	@Override
-	public double getTiefgang() {
-		return tiefgang;
+	public double getDraft() {
+		return draft;
 	}
 
 	@Override
-	public void setTiefgang(double tiefgang) {
-		this.tiefgang = tiefgang;
+	public void setDraft(double draft) {
+		this.draft = draft;
 	}
 
 	@Override
-	public double getMasthoehe() {
-		return masthoehe;
+	public double getMastHeight() {
+		return mastHeight;
 	}
 
 	@Override
-	public void setMasthoehe(double masthoehe) {
-		this.masthoehe = masthoehe;
+	public void setMastHeight(double mastHeight) {
+		this.mastHeight = mastHeight;
 	}
 
 	@Override
-	public double getVerdraengung() {
-		return verdraengung;
+	public double getDisplacement() {
+		return displacement;
 	}
 
 	@Override
-	public void setVerdraengung(double verdraengung) {
-		this.verdraengung = verdraengung;
+	public void setDisplacement(double displacement) {
+		this.displacement = displacement;
 	}
 
 	@Override
-	public String getRiggArt() {
-		return riggArt;
+	public String getRigging() {
+		return rigging;
 	}
 
 	@Override
-	public void setRiggArt(String riggArt) {
-		this.riggArt = riggArt;
+	public void setRigging(String rigging) {
+		this.rigging = rigging;
 	}
 
 	@Override
-	public int getBaujahr() {
-		return baujahr;
+	public int getYearOfConstruction() {
+		return yearOfConstruction;
 	}
 
 	@Override
-	public void setBaujahr(int baujahr) {
-		this.baujahr = baujahr;
+	public void setYearOfConstruction(int yearOfConstruction) {
+		this.yearOfConstruction = yearOfConstruction;
 	}
 
 	@Override
@@ -228,63 +232,63 @@ public class Boat implements IBoat {
 	}
 
 	@Override
-	public double getTankGroesse() {
-		return tankGroesse;
+	public double getTankSize() {
+		return tankSize;
 	}
 
 	@Override
-	public void setTankGroesse(double tankGroesse) {
-		this.tankGroesse = tankGroesse;
+	public void setTankSize(double tankSize) {
+		this.tankSize = tankSize;
 	}
 
 	@Override
-	public double getWassertankGroesse() {
-		return wassertankGroesse;
+	public double getWasteWaterTankSize() {
+		return wasteWaterTankSize;
 	}
 
 	@Override
-	public void setWassertankGroesse(double wassertankGroesse) {
-		this.wassertankGroesse = wassertankGroesse;
+	public void setWasteWaterTankSize(double wasteWaterTankSize) {
+		this.wasteWaterTankSize = wasteWaterTankSize;
 	}
 
 	@Override
-	public double getAbwassertankGroesse() {
-		return abwassertankGroesse;
+	public double getFreshWaterTankSize() {
+		return freshWaterTankSize;
 	}
 
 	@Override
-	public void setAbwassertankGroesse(double abwassertankGroesse) {
-		this.abwassertankGroesse = abwassertankGroesse;
+	public void setFreshWaterTankSize(double freshWaterTankSize) {
+		this.freshWaterTankSize = freshWaterTankSize;
 	}
 
 	@Override
-	public double getGrosssegelGroesse() {
-		return grosssegelGroesse;
+	public double getMainSailSize() {
+		return mainSailSize;
 	}
 
 	@Override
-	public void setGrosssegelGroesse(double grosssegelGroesse) {
-		this.grosssegelGroesse = grosssegelGroesse;
+	public void setMainSailSize(double mainSailSize) {
+		this.mainSailSize = mainSailSize;
 	}
 
 	@Override
-	public double getGenuaGroesse() {
-		return genuaGroesse;
+	public double getGenuaSize() {
+		return genuaSize;
 	}
 
 	@Override
-	public void setGenuaGroesse(double genuaGroesse) {
-		this.genuaGroesse = genuaGroesse;
+	public void setGenuaSize(double genuaSize) {
+		this.genuaSize = genuaSize;
 	}
 
 	@Override
-	public double getSpiGroesse() {
-		return spiGroesse;
+	public double getSpiSize() {
+		return spiSize;
 	}
 
 	@Override
-	public void setSpiGroesse(double spiGroesse) {
-		this.spiGroesse = spiGroesse;
+	public void setSpiSize(double spiSize) {
+		this.spiSize = spiSize;
 	}
 
 }

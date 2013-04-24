@@ -23,13 +23,13 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getName(UUID id) {
-		return boat.getName();
+	public String getBoatName(UUID id) {
+		return boat.getBoatName();
 	}
 
 	@Override
-	public void setName(UUID id, String Name) {
-		boat.setName(Name);
+	public void setBoatName(UUID id, String BoatName) {
+		boat.setBoatName(BoatName);
 		notifyObservers();
 
 	}
@@ -47,25 +47,25 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getSegelzeichen(UUID id) {
-		return boat.getSegelzeichen();
+	public String getSailSign(UUID id) {
+		return boat.getSailSign();
 	}
 
 	@Override
-	public void setSegelzeichen(UUID id, String segelzeichen) {
-		boat.setSegelzeichen(segelzeichen);
+	public void setSailSign(UUID id, String SailSign) {
+		boat.setSailSign(SailSign);
 		notifyObservers();
 
 	}
 
 	@Override
-	public String getHeimathafen(UUID id) {
-		return boat.getHeimathafen();
+	public String getHomePort(UUID id) {
+		return boat.getHomePort();
 	}
 
 	@Override
-	public void setHeimathafen(UUID id, String heimathafen) {
-		boat.setHeimathafen(heimathafen);
+	public void setHomePort(UUID id, String HomePort) {
+		boat.setHomePort(HomePort);
 		notifyObservers();
 
 	}
@@ -83,135 +83,135 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getEigner(UUID id) {
-		return boat.getEigner();
+	public String getOwner(UUID id) {
+		return boat.getOwner();
 	}
 
 	@Override
-	public void setEigner(UUID id, String eigner) {
-		boat.setEigner(eigner);
+	public void setOwner(UUID id, String Owner) {
+		boat.setOwner(Owner);
 		notifyObservers();
 
 	}
 
 	@Override
-	public String getVersicherung(UUID id) {
-		return boat.getVersicherung();
+	public String getInsurance(UUID id) {
+		return boat.getInsurance();
 	}
 
 	@Override
-	public void setVersicherung(UUID id, String versicherung) {
-		boat.setVersicherung(versicherung);
+	public void setInsurance(UUID id, String Insurance) {
+		boat.setInsurance(Insurance);
 		notifyObservers();
 	}
 
 	@Override
-	public String getRufzeichen(UUID id) {
-		return boat.getRufzeichen();
+	public String getCallSign(UUID id) {
+		return boat.getCallSign();
 	}
 
 	@Override
-	public void setRufzeichen(UUID id, String rufzeichen) {
-		boat.setRufzeichen(rufzeichen);
+	public void setCallSign(UUID id, String CallSign) {
+		boat.setCallSign(CallSign);
 		notifyObservers();
 	}
 
 	@Override
-	public String getTyp(UUID id) {
-		return boat.getTyp();
+	public String getType(UUID id) {
+		return boat.getType();
 	}
 
 	@Override
-	public void setTyp(UUID id, String typ) {
-		boat.setTyp(typ);
+	public void setType(UUID id, String Type) {
+		boat.setType(Type);
 		notifyObservers();
 	}
 
 	@Override
-	public String getKonstrukteur(UUID id) {
-		return boat.getKonstrukteur();
+	public String getConstructor(UUID id) {
+		return boat.getConstructor();
 	}
 
 	@Override
-	public void setKonstrukteur(UUID id, String konstrukteur) {
-		boat.setKonstrukteur(konstrukteur);
+	public void setConstructor(UUID id, String Constructor) {
+		boat.setConstructor(Constructor);
 		notifyObservers();
 	}
 
 	@Override
-	public double getLaenge(UUID id) {
-		return boat.getLaenge();
+	public double getLength(UUID id) {
+		return boat.getLength();
 	}
 
 	@Override
-	public void setLaenge(UUID id, double laenge) {
-		boat.setLaenge(laenge);
+	public void setLength(UUID id, double Length) {
+		boat.setLength(Length);
 		notifyObservers();
 	}
 
 	@Override
-	public double getBreite(UUID id) {
-		return boat.getBreite();
+	public double getWidth(UUID id) {
+		return boat.getWidth();
 	}
 
 	@Override
-	public void setBreite(UUID id, double breite) {
-		boat.setBreite(breite);
+	public void setWidth(UUID id, double width) {
+		boat.setWidth(width);
 		notifyObservers();
 	}
 
 	@Override
-	public double getTiefgang(UUID id) {
-		return boat.getTiefgang();
+	public double getDraft(UUID id) {
+		return boat.getDraft();
 	}
 
 	@Override
-	public void setTiefgang(UUID id, double tiefgang) {
-		boat.setTiefgang(tiefgang);
+	public void setDraft(UUID id, double draft) {
+		boat.setDraft(draft);
 		notifyObservers();
 	}
 
 	@Override
-	public double getMasthoehe(UUID id) {
-		return boat.getMasthoehe();
+	public double getMastHeight(UUID id) {
+		return boat.getMastHeight();
 	}
 
 	@Override
-	public void setMasthoehe(UUID id, double masthoehe) {
-		boat.setMasthoehe(masthoehe);
+	public void setMastHeight(UUID id, double mastHeight) {
+		boat.setMastHeight(mastHeight);
 		notifyObservers();
 	}
 
 	@Override
-	public double getVerdraengung(UUID id) {
-		return boat.getVerdraengung();
+	public double getDisplacement(UUID id) {
+		return boat.getDisplacement();
 	}
 
 	@Override
-	public void setVerdraengung(UUID id, double verdraengung) {
-		boat.setVerdraengung(verdraengung);
+	public void setDisplacement(UUID id, double displacement) {
+		boat.setDisplacement(displacement);
 		notifyObservers();
 	}
 
 	@Override
-	public String getRiggArt(UUID id) {
-		return boat.getRiggArt();
+	public String getRigging(UUID id) {
+		return boat.getRigging();
 	}
 
 	@Override
-	public void setRiggArt(UUID id, String riggArt) {
-		boat.setRiggArt(riggArt);
+	public void setRigging(UUID id, String rigging) {
+		boat.setRigging(rigging);
 		notifyObservers();
 	}
 
 	@Override
-	public int getBaujahr(UUID id) {
-		return boat.getBaujahr();
+	public int getYearOfConstruction(UUID id) {
+		return boat.getYearOfConstruction();
 	}
 
 	@Override
-	public void setBaujahr(UUID id, int baujahr) {
-		boat.setBaujahr(baujahr);
+	public void setYearOfConstruction(UUID id, int yearOfConstruction) {
+		boat.setYearOfConstruction(yearOfConstruction);
 		notifyObservers();
 	}
 
@@ -227,91 +227,91 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public double getTankGroesse(UUID id) {
-		return boat.getTankGroesse();
+	public double getTankSize(UUID id) {
+		return boat.getTankSize();
 	}
 
 	@Override
-	public void setTankGroesse(UUID id, double tankGroesse) {
-		boat.setTankGroesse(tankGroesse);
+	public void setTankSize(UUID id, double tankSize) {
+		boat.setTankSize(tankSize);
 		notifyObservers();
 	}
 
 	@Override
-	public double getWassertankGroesse(UUID id) {
-		return boat.getWassertankGroesse();
+	public double getWasteWaterTankSize(UUID id) {
+		return boat.getWasteWaterTankSize();
 	}
 
 	@Override
-	public void setWassertankGroesse(UUID id, double wassertankGroesse) {
-		boat.setWassertankGroesse(wassertankGroesse);
+	public void setWasteWaterTankSize(UUID id, double wasteWaterTankSize) {
+		boat.setWasteWaterTankSize(wasteWaterTankSize);
 		notifyObservers();
 	}
 
 	@Override
-	public double getAbwassertankGroesse(UUID id) {
-		return boat.getAbwassertankGroesse();
+	public double getFreshWaterTankSize(UUID id) {
+		return boat.getFreshWaterTankSize();
 	}
 
 	@Override
-	public void setAbwassertankGroesse(UUID id, double abwassertankGroesse) {
-		boat.setAbwassertankGroesse(abwassertankGroesse);
+	public void setFreshWaterTankSize(UUID id, double freshWaterTankSize) {
+		boat.setFreshWaterTankSize(freshWaterTankSize);
 		notifyObservers();
 	}
 
 	@Override
-	public double getGrosssegelGroesse(UUID id) {
-		return boat.getGrosssegelGroesse();
+	public double getMainSailSize(UUID id) {
+		return boat.getMainSailSize();
 	}
 
 	@Override
-	public void setGrosssegelGroesse(UUID id, double grosssegelGroesse) {
-		boat.setGrosssegelGroesse(grosssegelGroesse);
+	public void setMainSailSize(UUID id, double mainSailSize) {
+		boat.setMainSailSize(mainSailSize);
 		notifyObservers();
 	}
 
 	@Override
-	public double getGenuaGroesse(UUID id) {
-		return boat.getGenuaGroesse();
+	public double getGenuaSize(UUID id) {
+		return boat.getGenuaSize();
 	}
 
 	@Override
-	public void setGenuaGroesse(UUID id, double genuaGroesse) {
-		boat.setGenuaGroesse(genuaGroesse);
+	public void setGenuaSize(UUID id, double genuaSize) {
+		boat.setGenuaSize(genuaSize);
 		notifyObservers();
 	}
 
 	@Override
-	public double getSpiGroesse(UUID id) {
-		return boat.getSpiGroesse();
+	public double getSpiSize(UUID id) {
+		return boat.getSpiSize();
 	}
 
 	@Override
-	public void setSpiGroesse(UUID id, double spiGroesse) {
-		boat.setSpiGroesse(spiGroesse);
+	public void setSpiSize(UUID id, double spiSize) {
+		boat.setSpiSize(spiSize);
 		notifyObservers();
 	}
 
 	@Override
 	public String getString(UUID id) {
-		return "Name = " + getName(id) + ", ID = " + id + ", RegisterNr = "
-				+ getRegisterNr(id) + ", Segelzeichen = " + getSegelzeichen(id)
-				+ ", Heimathafen = " + getHeimathafen(id) + ", Yachtclub = "
-				+ getYachtclub(id) + ", Eigner = " + getEigner(id)
-				+ ", Versicherung = " + getVersicherung(id) + ", Rufzeichen = "
-				+ getRufzeichen(id) + ", Typ = " + getTyp(id)
-				+ ", Konstrukteur = " + getKonstrukteur(id) + ", Laenge = "
-				+ getLaenge(id) + ", Breite = " + getBreite(id)
-				+ ", Tiefgang = " + getTiefgang(id) + ", Masthoehe = "
-				+ getMasthoehe(id) + ", Verdraengung = " + getVerdraengung(id)
-				+ ", RiggArt = " + getRiggArt(id) + ", Baujahr = "
-				+ getBaujahr(id) + ", Motor = " + getMotor(id)
-				+ ", TankGroesse = " + getTankGroesse(id)
-				+ ", WassertankGroesse = " + getWassertankGroesse(id)
-				+ ", AbwassertankGroesse = " + getAbwassertankGroesse(id)
-				+ ", GrosssegelGroesse = " + getGrosssegelGroesse(id)
-				+ ", GenuaGroesse = " + getGenuaGroesse(id) + ", SpiGroesse = "
-				+ getSpiGroesse(id);
+		return "BoatName = " + getBoatName(id) + ", ID = " + id + ", RegisterNr = "
+				+ getRegisterNr(id) + ", SailSign = " + getSailSign(id)
+				+ ", HomePort = " + getHomePort(id) + ", Yachtclub = "
+				+ getYachtclub(id) + ", Owner = " + getOwner(id)
+				+ ", Insurance = " + getInsurance(id) + ", CallSign = "
+				+ getCallSign(id) + ", Type = " + getType(id)
+				+ ", Constructor = " + getConstructor(id) + ", Length = "
+				+ getLength(id) + ", Width = " + getWidth(id)
+				+ ", Draft = " + getDraft(id) + ", MastHeight = "
+				+ getMastHeight(id) + ", Displacement = " + getDisplacement(id)
+				+ ", Rigging = " + getRigging(id) + ", YearOfConstruction = "
+				+ getYearOfConstruction(id) + ", Motor = " + getMotor(id)
+				+ ", TankSize = " + getTankSize(id)
+				+ ", WasteWaterTankSize = " + getWasteWaterTankSize(id)
+				+ ", FreshWaterTankSize = " + getFreshWaterTankSize(id)
+				+ ", MainSailSize = " + getMainSailSize(id)
+				+ ", GenuaSize = " + getGenuaSize(id) + ", SpiSize = "
+				+ getSpiSize(id);
 	}
 
 	@Override
@@ -320,7 +320,7 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getPersonnameById(String id) {
+	public String getPersonBoatNameById(String id) {
 		return personContoller.getPersonLastname(id) + ", "
 				+ personContoller.getPersonFirstname(id);
 	}
@@ -328,13 +328,13 @@ public class BoatController extends Observable implements IBoatController {
 	@Override
 	public Map<String, String> getBoats() {
 		Map<String, String> list = new HashMap<String, String>();
-		list.put(boat.getId().toString(), boat.getName());
+		list.put(boat.getId().toString(), boat.getBoatName());
 		return list;
 	}
 
 	@Override
-	public String getNameById(UUID id) {
-		return boat.getName();
+	public String getBoatNameById(UUID id) {
+		return boat.getBoatName();
 	}
 
 	@Override

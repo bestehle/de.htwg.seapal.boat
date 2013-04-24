@@ -3,54 +3,102 @@ package de.htwg.seapal.boat.models;
 import java.util.UUID;
 
 public interface IBoat {
-	
-	public UUID getId();
-	public String getName();
-	public void setName(String Name);
-	public String getRegisterNr();
-	public void setRegisterNr(String registerNr);
-	public String getSegelzeichen();
-	public void setSegelzeichen(String segelzeichen);
-	public String getHeimathafen();
-	public void setHeimathafen(String heimathafen);
-	public String getYachtclub();
-	public void setYachtclub(String yachtclub);
-	public String getEigner();
-	public void setEigner(String eigner);
-	public String getVersicherung();
-	public void setVersicherung(String versicherung);
-	public String getRufzeichen();
-	public void setRufzeichen(String rufzeichen);
-	public String getTyp();
-	public void setTyp(String typ);
-	public String getKonstrukteur();
-	public void setKonstrukteur(String konstrukteur);
-	public double getLaenge();
-	public void setLaenge(double laenge);
-	public double getBreite();
-	public void setBreite(double breite);
-	public double getTiefgang();
-	public void setTiefgang(double tiefgang);
-	public double getMasthoehe();
-	public void setMasthoehe(double masthoehe);
-	public double getVerdraengung();
-	public void setVerdraengung(double verdraengung);
-	public String getRiggArt();
-	public void setRiggArt(String riggArt);
-	public int getBaujahr();
-	public void setBaujahr(int baujahr);
-	public String getMotor();
-	public void setMotor(String motor);
-	public double getTankGroesse();
-	public void setTankGroesse(double tankGroesse);
-	public double getWassertankGroesse();
-	public void setWassertankGroesse(double wassertankGroesse);
-	public double getAbwassertankGroesse();
-	public void setAbwassertankGroesse(double abwassertankGroesse);
-	public double getGrosssegelGroesse();
-	public void setGrosssegelGroesse(double grosssegelGroesse);
-	public double getGenuaGroesse();
-	public void setGenuaGroesse(double genuaGroesse);
-	public double getSpiGroesse();
-	public void setSpiGroesse(double spiGroesse);
+
+    UUID getId();
+
+    String getBoatName();
+
+    void setBoatName(String boatName);
+
+    String getRegisterNr();
+
+    void setRegisterNr(String registerNr);
+
+    String getSailSign();
+
+    void setSailSign(String sailSign);
+
+    String getHomePort();
+
+    void setHomePort(String homePort);
+
+    String getYachtclub();
+
+    void setYachtclub(String yachtclub);
+
+    String getOwner();
+
+    void setOwner(String owner);
+
+    String getInsurance();
+
+    void setInsurance(String insurance);
+
+    String getCallSign();
+
+    void setCallSign(String callSign);
+
+    String getType();
+
+    void setType(String type);
+
+    String getConstructor();
+
+    void setConstructor(String constructor);
+
+    double getLength();
+
+    void setLength(double length);
+
+    double getWidth();
+
+    void setWidth(double width);
+
+    double getDraft();
+
+    void setDraft(double draft);
+
+    double getMastHeight();
+
+    void setMastHeight(double mastHeight);
+
+    double getDisplacement();
+
+    void setDisplacement(double displacement);
+
+    String getRigging();
+
+    void setRigging(String rigging);
+
+    int getYearOfConstruction();
+
+    void setYearOfConstruction(int yearOfConstruction);
+
+    String getMotor();
+
+    void setMotor(String motor);
+
+    double getTankSize();
+
+    void setTankSize(double tankSize);
+
+    double getWasteWaterTankSize();
+
+    void setWasteWaterTankSize(double wasteWaterTankSize);
+
+    double getFreshWaterTankSize();
+
+    void setFreshWaterTankSize(double freshWaterTankSize);
+
+    double getMainSailSize();
+
+    void setMainSailSize(double mainSailSize);
+
+    double getGenuaSize();
+
+    void setGenuaSize(double genuaSize);
+
+    double getSpiSize();
+
+    void setSpiSize(double spiSize);
 }

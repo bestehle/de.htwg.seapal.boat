@@ -15,3 +15,5 @@ dist
 /.target
 /.project
 /bin
+/*.db
+/*.sql

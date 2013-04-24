@@ -1,5 +1,6 @@
 package de.htwg.seapal.boat.database.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
@@ -14,7 +15,7 @@ public class BoatEbeanDatabase implements IBoatDatabase {
 
 	@Override
 	public UUID newBoat() {
-		IBoat boat = new Boat();
+		Boat boat = new Boat();
 		Ebean.save(boat);
 		return boat.getId();
 	}
@@ -32,7 +33,7 @@ public class BoatEbeanDatabase implements IBoatDatabase {
 
 	@Override
 	public IBoat getBoat(UUID id) {
-		IBoat boat = Ebean.find(IBoat.class, id);
+		IBoat boat = Ebean.find(Boat.class, id);
 		if (boat == null)
 			throw new NoSuchElementException("No Boat for id : " + id);
 		return boat;
@@ -40,7 +41,11 @@ public class BoatEbeanDatabase implements IBoatDatabase {
 
 	@Override
 	public List<IBoat> getBoats() {
-		return Ebean.find(IBoat.class).findList();
+		List<Boat> findList = Ebean.find(Boat.class).findList();
+		List<IBoat> list = new ArrayList<IBoat>();
+		list.addAll(findList);
+		return list;
+		
 	}
 
 	@Override

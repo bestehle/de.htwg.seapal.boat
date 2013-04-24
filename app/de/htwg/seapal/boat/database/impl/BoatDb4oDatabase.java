@@ -17,7 +17,7 @@ public class BoatDb4oDatabase implements IBoatDatabase {
 	private ObjectContainer db;
 
 	public BoatDb4oDatabase() {
-		db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "boat3.db");
+		db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "boat.db");
 	}
 
 	@Override

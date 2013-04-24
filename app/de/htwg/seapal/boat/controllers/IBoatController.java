@@ -7,101 +7,101 @@ import de.htwg.seapal.boat.util.observer.IObservable;
 
 public interface IBoatController extends IObservable {
 
-	String getName(UUID id);
+	String getBoatName(UUID id);
 
-	void setName(UUID id, String Name);
+	void setBoatName(UUID id, String BoatName);
 
 	String getRegisterNr(UUID id);
 
 	void setRegisterNr(UUID id, String registerNr);
 
-	String getSegelzeichen(UUID id);
+	String getSailSign(UUID id);
 
-	void setSegelzeichen(UUID id, String segelzeichen);
+	void setSailSign(UUID id, String SailSign);
 
-	String getHeimathafen(UUID id);
+	String getHomePort(UUID id);
 
-	void setHeimathafen(UUID id, String heimathafen);
+	void setHomePort(UUID id, String HomePort);
 
 	String getYachtclub(UUID id);
 
 	void setYachtclub(UUID id, String yachtclub);
 
-	String getEigner(UUID id);
+	String getOwner(UUID id);
 
-	void setEigner(UUID id, String eigner);
+	void setOwner(UUID id, String Owner);
 
-	String getVersicherung(UUID id);
+	String getInsurance(UUID id);
 
-	void setVersicherung(UUID id, String versicherung);
+	void setInsurance(UUID id, String Insurance);
 
-	String getRufzeichen(UUID id);
+	String getCallSign(UUID id);
 
-	void setRufzeichen(UUID id, String rufzeichen);
+	void setCallSign(UUID id, String CallSign);
 
-	String getTyp(UUID id);
+	String getType(UUID id);
 
-	void setTyp(UUID id, String typ);
+	void setType(UUID id, String Type);
 
-	String getKonstrukteur(UUID id);
+	String getConstructor(UUID id);
 
-	void setKonstrukteur(UUID id, String konstrukteur);
+	void setConstructor(UUID id, String Constructor);
 
-	double getLaenge(UUID id);
+	double getLength(UUID id);
 
-	void setLaenge(UUID id, double laenge);
+	void setLength(UUID id, double Length);
 
-	double getBreite(UUID id);
+	double getWidth(UUID id);
 
-	void setBreite(UUID id, double breite);
+	void setWidth(UUID id, double width);
 
-	double getTiefgang(UUID id);
+	double getDraft(UUID id);
 
-	void setTiefgang(UUID id, double tiefgang);
+	void setDraft(UUID id, double draft);
 
-	double getMasthoehe(UUID id);
+	double getMastHeight(UUID id);
 
-	void setMasthoehe(UUID id, double masthoehe);
+	void setMastHeight(UUID id, double mastHeight);
 
-	double getVerdraengung(UUID id);
+	double getDisplacement(UUID id);
 
-	void setVerdraengung(UUID id, double verdraengung);
+	void setDisplacement(UUID id, double displacement);
 
-	String getRiggArt(UUID id);
+	String getRigging(UUID id);
 
-	void setRiggArt(UUID id, String riggArt);
+	void setRigging(UUID id, String rigging);
 
-	int getBaujahr(UUID id);
+	int getYearOfConstruction(UUID id);
 
-	void setBaujahr(UUID id, int baujahr);
+	void setYearOfConstruction(UUID id, int yearOfConstruction);
 
 	String getMotor(UUID id);
 
 	void setMotor(UUID id, String motor);
 
-	double getTankGroesse(UUID id);
+	double getTankSize(UUID id);
 
-	void setTankGroesse(UUID id, double tankGroesse);
+	void setTankSize(UUID id, double tankSize);
 
-	double getWassertankGroesse(UUID id);
+	double getWasteWaterTankSize(UUID id);
 
-	void setWassertankGroesse(UUID id, double wassertankGroesse);
+	void setWasteWaterTankSize(UUID id, double wasteWaterTankSize);
 
-	double getAbwassertankGroesse(UUID id);
+	double getFreshWaterTankSize(UUID id);
 
-	void setAbwassertankGroesse(UUID id, double abwassertankGroesse);
+	void setFreshWaterTankSize(UUID id, double freshWaterTankSize);
 
-	double getGrosssegelGroesse(UUID id);
+	double getMainSailSize(UUID id);
 
-	void setGrosssegelGroesse(UUID id, double grosssegelGroesse);
+	void setMainSailSize(UUID id, double mainSailSize);
 
-	double getGenuaGroesse(UUID id);
+	double getGenuaSize(UUID id);
 
-	void setGenuaGroesse(UUID id, double genuaGroesse);
+	void setGenuaSize(UUID id, double genuaSize);
 
-	double getSpiGroesse(UUID id);
+	double getSpiSize(UUID id);
 
-	void setSpiGroesse(UUID id, double spiGroesse);
+	void setSpiSize(UUID id, double spiSize);
 
 	String getString(UUID id);
 
@@ -113,9 +113,9 @@ public interface IBoatController extends IObservable {
 
 	Map<String, String> getBoats();
 
-	String getNameById(UUID id);
+	String getBoatNameById(UUID id);
 
 	Map<String, String> getPersons();
 
-	String getPersonnameById(String id);
+	String getPersonBoatNameById(String id);
 }
