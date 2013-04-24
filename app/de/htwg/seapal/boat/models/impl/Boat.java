@@ -1,10 +1,16 @@
 package de.htwg.seapal.boat.models.impl;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import de.htwg.seapal.boat.models.IBoat;
 
+@Entity
 public class Boat implements IBoat {
-
+	
+	@Id
 	private String id;
+	
 	private String bootsname;
 	private String registerNr;
 	private String segelzeichen;
