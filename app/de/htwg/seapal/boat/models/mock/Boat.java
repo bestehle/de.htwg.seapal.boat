@@ -4,10 +4,6 @@ import de.htwg.seapal.boat.models.IBoat;
 
 public class Boat implements IBoat {
 	
-	public IBoat getInstance()	{
-		return new Boat();
-	}
-	
 	@Override
 	public String getId() {
 		return "BOAT-1234";

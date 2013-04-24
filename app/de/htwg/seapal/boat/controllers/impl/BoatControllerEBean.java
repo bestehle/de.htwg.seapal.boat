@@ -14,6 +14,7 @@ import com.google.inject.Inject;
 
 import de.htwg.seapal.boat.controllers.IBoatController;
 import de.htwg.seapal.boat.models.IBoat;
+import de.htwg.seapal.boat.models.impl.Boat;
 import de.htwg.seapal.boat.util.observer.Observable;
 import de.htwg.seapal.person.controllers.IPersonController;
 
@@ -325,7 +326,7 @@ public class BoatControllerEBean extends Observable implements IBoatController {
 
 	@Override
 	public String newBoat() {
-		IBoat newBoat = boat.getInstance();
+		IBoat newBoat = new Boat();
 		String id = getNewId();
 		newBoat.setId(id);
 		Ebean.save(newBoat);
