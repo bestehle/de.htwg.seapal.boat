@@ -7,7 +7,7 @@ import de.htwg.seapal.boat.models.IBoat;
 public class Boat implements IBoat {
 
 	@Override
-	public UUID getId() {
+	public UUID getUUId() {
 		return UUID.fromString("MOCK");
 	}
 
@@ -225,6 +225,12 @@ public class Boat implements IBoat {
 
 	@Override
 	public void setSpiSize(double spiSize) {
+	}
+
+	@Override
+	public String getId() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

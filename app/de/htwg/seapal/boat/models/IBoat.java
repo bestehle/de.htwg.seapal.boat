@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public interface IBoat {
 
-    UUID getId();
+    String getId();
 
     String getBoatName();
 
@@ -101,4 +101,6 @@ public interface IBoat {
     double getSpiSize();
 
     void setSpiSize(double spiSize);
+
+	UUID getUUId();
 }

@@ -17,7 +17,7 @@ public class BoatEbeanDatabase implements IBoatDatabase {
 	public UUID newBoat() {
 		Boat boat = new Boat();
 		Ebean.save(boat);
-		return boat.getId();
+		return boat.getUUId();
 	}
 
 	@Override

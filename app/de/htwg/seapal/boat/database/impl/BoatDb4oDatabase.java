@@ -24,7 +24,7 @@ public class BoatDb4oDatabase implements IBoatDatabase {
 	public UUID newBoat() {
 		IBoat boat = new Boat();
 		saveBoat(boat);
-		return boat.getId();
+		return boat.getUUId();
 	}
 
 	@Override

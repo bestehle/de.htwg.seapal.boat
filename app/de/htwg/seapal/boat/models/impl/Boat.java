@@ -5,17 +5,21 @@ import java.util.UUID;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonProperty;
+import org.ektorp.support.CouchDbDocument;
+
 import de.htwg.seapal.boat.models.IBoat;
 
 @Entity
-public class Boat implements IBoat {
+public class Boat extends CouchDbDocument implements IBoat {
 
 	public Boat() {
-		this.id = UUID.randomUUID();
+		this.id = UUID.randomUUID().toString();
 	}
 
 	@Id
-	private UUID id;
+	private String id;
 
 	private String boatName;
 	private String registerNr;
@@ -42,13 +46,20 @@ public class Boat implements IBoat {
 	private double genuaSize;
 	private double spiSize;
 
+	@JsonIgnore
 	@Override
-	public UUID getId() {
+	public UUID getUUId() {
+		return UUID.fromString(id);
+	}
+
+	@JsonProperty("_id")
+	public String getId() {
 		return id;
 	}
-	
-	public void setId(UUID id)	{
-		this.id = id;
+
+	@JsonProperty("_id")
+	public void setId(UUID id) {
+		this.id = id.toString();
 	}
 
 	@Override
@@ -137,7 +148,7 @@ public class Boat implements IBoat {
 	}
 
 	@Override
-    public void setType(String type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 
