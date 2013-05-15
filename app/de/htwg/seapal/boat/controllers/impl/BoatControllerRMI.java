@@ -8,14 +8,13 @@ import java.util.UUID;
 
 import com.google.inject.Inject;
 
-import de.htwg.seapal.boat.controllers.IBoatController;
 import de.htwg.seapal.boat.controllers.IBoatControllerRMI;
 import de.htwg.seapal.boat.database.IBoatDatabase;
 import de.htwg.seapal.boat.models.IBoat;
-import de.htwg.seapal.boat.util.observer.Observable;
+import de.htwg.seapal.boat.util.observer.ObservableRMI;
 import de.htwg.seapal.person.controllers.IPersonController;
 
-public class BoatControllerRMI extends Observable implements IBoatControllerRMI {
+public class BoatControllerRMI /*extends ObservableRMI*/ implements IBoatControllerRMI {
 
 	protected IPersonController personContoller;
 	protected IBoatDatabase db;
@@ -52,7 +51,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setBoatName(BoatName);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -66,7 +65,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setRegisterNr(registerNr);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -79,7 +78,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setSailSign(SailSign);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -92,7 +91,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setHomePort(HomePort);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -105,7 +104,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setYachtclub(yachtclub);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -118,7 +117,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setOwner(Owner);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -131,7 +130,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setInsurance(Insurance);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -144,7 +143,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setCallSign(CallSign);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -157,7 +156,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setType(Type);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -171,7 +170,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setConstructor(Constructor);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -184,7 +183,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setLength(Length);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -197,7 +196,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setWidth(width);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -210,7 +209,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setDraft(draft);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -224,7 +223,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setMastHeight(mastHeight);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -238,7 +237,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setDisplacement(displacement);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -251,7 +250,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setRigging(rigging);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -265,7 +264,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setYearOfConstruction(yearOfConstruction);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -278,7 +277,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setMotor(motor);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -291,7 +290,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setTankSize(tankSize);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -305,7 +304,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setWasteWaterTankSize(wasteWaterTankSize);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -319,7 +318,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setFreshWaterTankSize(freshWaterTankSize);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -333,7 +332,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setMainSailSize(mainSailSize);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -346,7 +345,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setGenuaSize(genuaSize);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -359,7 +358,7 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 		IBoat boat = db.getBoat(id);
 		boat.setSpiSize(spiSize);
 		db.saveBoat(boat);
-		notifyObservers();
+		
 	}
 
 	@Override
@@ -406,7 +405,8 @@ public class BoatControllerRMI extends Observable implements IBoatControllerRMI 
 	@Override
 	public void deleteBoat(UUID id) throws RemoteException {
 		db.deleteBoat(id);
-		notifyObservers();
+		
 	}
+
 
 }

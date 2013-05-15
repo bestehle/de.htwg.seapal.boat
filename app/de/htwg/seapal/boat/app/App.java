@@ -26,30 +26,35 @@ public class App {
 	/**
 	 * @param args
 	 */
+	public class Test {
+		
+	}
+	
 	public static void main(String[] args) {
 
 		Application play = new DefaultApplication(new File("."),
 				App.class.getClassLoader(), null, Mode.Dev());
 
-		Play.start(play);
+		// Play.start(play);
 
 		try {
 
 			// Set up Google Guice Dependency Injector
-			Injector injector = Guice.createInjector(new BoatImplModule(), new PersonDemoImplModule());
+			Injector injector = Guice.createInjector(new BoatImplModule(),
+					new PersonDemoImplModule());
 
 			// Build up the application, resolving dependencies automatically by
 			// Guice
 			IBoatController controller = injector
 					.getInstance(IBoatController.class);
-			
+
 			IBoatControllerRMI rmiController = injector
 					.getInstance(IBoatControllerRMI.class);
-			
-			Registry registry = LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
-			IBoatControllerRMI stub = (IBoatControllerRMI)
-					UnicastRemoteObject.exportObject(rmiController, 0);
-					registry.rebind("BoatControllerRMI", stub);
+
+			Registry registry = LocateRegistry.getRegistry();
+			IBoatControllerRMI stub = (IBoatControllerRMI) UnicastRemoteObject
+					.exportObject(rmiController, 0);
+			registry.rebind("BoatControllerRMI", stub);
 
 			BoatTUI tui = new BoatTUI(controller);
 

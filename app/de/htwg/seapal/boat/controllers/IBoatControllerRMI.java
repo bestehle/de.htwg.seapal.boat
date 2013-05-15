@@ -5,9 +5,9 @@ import java.rmi.RemoteException;
 import java.util.Map;
 import java.util.UUID;
 
-import de.htwg.seapal.boat.util.observer.IObservable;
+import de.htwg.seapal.boat.util.observer.IObservableRMI;
 
-public interface IBoatControllerRMI extends IObservable, Remote {
+public interface IBoatControllerRMI extends Remote {
 
 	String getBoatName(UUID id) throws RemoteException;
 
