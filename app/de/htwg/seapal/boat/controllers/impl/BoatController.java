@@ -379,7 +379,7 @@ public class BoatController extends Observable implements IBoatController {
 	}
 
 	@Override
-	public String getPersonBoatNameById(String id) {
+	public String getPersonNameById(String id) {
 		return personContoller.getPersonLastname(id) + ", "
 				+ personContoller.getPersonFirstname(id);
 	}
