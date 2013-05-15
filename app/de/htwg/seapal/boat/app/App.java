@@ -1,6 +1,10 @@
 package de.htwg.seapal.boat.app;
 
 import java.io.File;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.Scanner;
 
 import play.api.Application;
@@ -12,6 +16,8 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import de.htwg.seapal.boat.controllers.IBoatController;
+import de.htwg.seapal.boat.controllers.IBoatControllerRMI;
+import de.htwg.seapal.boat.controllers.impl.BoatControllerRMI;
 import de.htwg.seapal.boat.views.tui.BoatTUI;
 import de.htwg.seapal.person.app.PersonDemoImplModule;
 
@@ -36,6 +42,14 @@ public class App {
 			// Guice
 			IBoatController controller = injector
 					.getInstance(IBoatController.class);
+			
+			IBoatControllerRMI rmiController = injector
+					.getInstance(IBoatControllerRMI.class);
+			
+			Registry registry = LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
+			IBoatControllerRMI stub = (IBoatControllerRMI)
+					UnicastRemoteObject.exportObject(rmiController, 0);
+					registry.rebind("BoatControllerRMI", stub);
 
 			BoatTUI tui = new BoatTUI(controller);
 
@@ -48,10 +62,11 @@ public class App {
 				continu = tui.processInputLine(scanner.next());
 			}
 
+		} catch (RemoteException e) {
+			e.printStackTrace();
 		} finally {
 			Play.stop();
 		}
 
 	}
-
 }
