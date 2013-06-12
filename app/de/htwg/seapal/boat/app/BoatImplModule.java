@@ -14,8 +14,8 @@ public class BoatImplModule extends AbstractModule {
 	protected void configure() {
 		bind(IBoat.class).to(de.htwg.seapal.boat.models.impl.Boat.class);
 		bind(IBoatController.class).to(de.htwg.seapal.boat.controllers.impl.BoatController.class);	
-		bind(IBoatControllerRMI.class).to(de.htwg.seapal.boat.controllers.impl.BoatControllerRMI.class);	
-		bind(IBoatDatabase.class).to(de.htwg.seapal.boat.database.impl.BoatEbeanDatabase.class);	
+//		bind(IBoatControllerRMI.class).to(de.htwg.seapal.boat.controllers.impl.BoatControllerRMI.class);	
+		bind(IBoatDatabase.class).to(de.htwg.seapal.boat.database.impl.BoatDb4oDatabase.class);	
 	}
 
 }

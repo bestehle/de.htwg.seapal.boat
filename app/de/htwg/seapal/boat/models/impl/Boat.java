@@ -7,12 +7,11 @@ import javax.persistence.Id;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
-import org.ektorp.support.CouchDbDocument;
 
 import de.htwg.seapal.boat.models.IBoat;
 
 @Entity
-public class Boat extends CouchDbDocument implements IBoat {
+public class Boat implements IBoat {
 
 	public Boat() {
 		this.id = UUID.randomUUID().toString();

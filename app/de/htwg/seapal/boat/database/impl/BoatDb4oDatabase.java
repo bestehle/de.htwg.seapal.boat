@@ -17,7 +17,7 @@ public class BoatDb4oDatabase implements IBoatDatabase {
 	private ObjectContainer db;
 
 	public BoatDb4oDatabase() {
-		db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "boat.db");
+		db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "boat4.db");
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class BoatDb4oDatabase implements IBoatDatabase {
 		List<IBoat> query = db.query(new Predicate<IBoat>() {
 			@Override
 			public boolean match(IBoat boat) {
-				return boat.getId().equals(id);
+				return UUID.fromString(boat.getId()).equals(id);
 			}
 		});
 		if (query.isEmpty())
